@@ -1,0 +1,1 @@
+put .hunt mset "lootcoin lootgem skin appr block hunt power magic ps 15 0 brawl" "lootcoin lootgem skin appr hunt block power magic ps 15 0 feint sledge" "lootcoin lootgem skin parry appr hunt power magic ps 15 0 feint axe" "lootcoin lootgem skin appr hunt parry power magic ps 15 0 feint scim" "lootcoin lootgem skin appr hunt power tm ff 10 0 scimitar"

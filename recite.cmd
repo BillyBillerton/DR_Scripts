@@ -1,0 +1,1 @@
+put recite Phelim, give me strength for my righteous vengeance\;Chadatru, guide my sword to swing in justice\;Everild, give me the power to conquer my enemies\;Truffenyi, let me not lose sight of compassion and mercy\;Else, I will become like those I despise\;Urrem'tier, receive into your fetid grasp these wicked souls\;May the Tamsine's realms never know their evil ways again

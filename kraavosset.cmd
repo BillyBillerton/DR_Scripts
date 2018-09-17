@@ -1,0 +1,1 @@
+put .hunt mset "lootall appr hunt skin power block tm fs 10 5" "lootall appr hunt skin power buff analyze block brawl" "lootall appr hunt skin parry power magic pm moa 10 0 shh" "lootall appr hunt skin block power buff throw bola" "lootall appr hunt skin parry power magic pm moa 10 0 scimitar"

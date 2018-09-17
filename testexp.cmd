@@ -1,0 +1,1 @@
+echo $Power_Perceive.LearningRate
