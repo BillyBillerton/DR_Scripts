@@ -20,17 +20,20 @@
 
 var rock stack
 var chisel saw
+#var rock boulder
+#var chisel chisel
+var current.lore Engineering
 if_2 var rock %2
 if_1 put #var MC.order.noun %1
 var Action carve
 var polish.gone 0
-include mc include.cmd
+include mc_include.cmd
 
 
 if "%rock" != "stack" then var chisel chisel
 
 action var Action riffler when notice several rough, jagged (shards|edges) protruding|rubbing the .* with a riffler set
-action var Action rasp when and determine it is no longer level|has developed an uneven texture|are uneven|is uneven|scraping the .* with a rasp
+action var Action rasp when and determine it is no longer level|has developed an uneven texture|uneven|scraping the .* with a rasp
 action var Action polish when some discolored areas on|applying some polish to 
 action var Action carve when ^carve .* with my %chisel|^scrape .* with my rasp|^rub .* with my riffler|^apply my polish to .*|appears free of defects that would impede further carving|anything that would prevent carving|ready for further carving
 action var Action assemble when ^\[Ingredients can
@@ -127,7 +130,7 @@ carve:
 	 send get my %chisel
 	 waitforre ^You get
 	}
-	 send carve $MC.order.noun with my %chisel
+	 send carve my $MC.order.noun with my %chisel
 	 pause 1
 	return
 
@@ -138,7 +141,7 @@ riffler:
 	 send get my riffler
 	 waitforre ^You get
 	}
-	 send rub $MC.order.noun with my riffler
+	 send rub my $MC.order.noun with my riffler
 	 pause 1
 	return
 
@@ -149,7 +152,7 @@ rasp:
 	 send get my rasp
 	 waitforre ^You get
 	}
-	 send scrape $MC.order.noun with my rasp
+	 send scrape my $MC.order.noun with my rasp
 	 pause 1
 	return
 
@@ -161,7 +164,7 @@ polish:
 	 send get my polish
 	 waitforre ^You get
 	}
-	 send apply my polish to $MC.order.noun
+	 send apply my polish to my $MC.order.noun
 	 pause 1
 	return
 
@@ -173,9 +176,9 @@ assemble:
 	 send get my %assemble
 	 waitforre ^You get
 	}
-	 send assemble $MC.order.noun with my %assemble
+	 send assemble my $MC.order.noun with my %assemble
 	 pause 1
-	 send analyze $MC.order.noun
+	 send analyze my $MC.order.noun
 	 pause 1
 	return
 
@@ -189,7 +192,7 @@ new.tool:
 		 if !("$righthand" = "Empty" || "$lefthand" = "Empty") then send put my $MC.order.noun in my %engineering.storage
 		 action (order) on
 		 send order
-		 pause .5
+		 waitfor You may purchase
 		 action (order) off
 		 gosub purchase order %polish.order
 		 send put my polish in my %engineering.storage

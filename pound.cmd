@@ -1,3 +1,4 @@
+#debug 10
 #MasterCraft - by the player of Jaervin Ividen
 # A crafting script suite...
 #v 0.1.6
@@ -12,13 +13,12 @@
 #
 #	If you place an unfinished item on the anvil, this script will try to finish it for you.
 #
-
 var pound.repeat 0
 if_2 var pound.repeat %2
 if_1 put #var MC.order.noun %1
 var small.ingot 0
 var item.anvil 0
-include mc include.cmd
+include mc_include.cmd
 var swap.tongs 0
 var worn.tongs 0
 var tongs.adj 0
@@ -38,6 +38,7 @@ action var tool hammer when ^push my bellows|^turn .* with my tongs|^push fuel w
 action var tool rehammer when ^The .* appears ready for pounding
 action var tool pliers when (with the|using) pliers to (stitch|pull|rivet) them together\.$|appear ready for bending using a pair of pliers\.|are now ready for (stitching|riveting) together using pliers\.$|Just pull the .* with the pliers|(bending|weaving) of .* into and around it\.|The links appear ready to be woven into and around
 action var tool assemble when ^\[Ingredients can
+action var excessloc $2 when and so you split the ingot and leave the portion you won't be using (on the|in your) (\S+).$
 action var tool done when ^Applying the final touches, you complete|TURN the GRINDSTONE several times
 action var item.anvil 1 when ^On the iron anvil you see
 action (work) goto Retry when \.\.\.wait|type ahead
@@ -88,8 +89,8 @@ ingot.grab:
 	 pause 1
 	 send put my hammer in my %forging.storage
 	 waitforre ^You put
-	 send get ingot
-	 waitforre ^You pick up|^You get
+	if "%excessloc" != "ground" then send get ingot from my %excessloc
+	if "%excessloc" = "ground" then send get ingot
 	if %small.ingot = 1 then
 	{
 		if %worn.tongs = 1 then send wear my tongs
@@ -113,6 +114,8 @@ work:
 	goto work
 
 analyze:
+	 pause
+	 pause 1
 	 send analyze $MC.order.noun
 	 pause 1
 	goto work
@@ -238,8 +241,9 @@ oil:
 	 send get my $MC.order.noun from my %forging.storage
 	 waitforre ^You get
 	}
-	 send pour my oil on $MC.order.noun
+	 send pour oil on $MC.order.noun
 	 waitforre ^Roundtime
+	 pause 1
 	 send put my oil in my %forging.storage
 	 waitforre ^You put|^What were you referring to
 	 gosub mark

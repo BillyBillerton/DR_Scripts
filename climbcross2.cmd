@@ -9,13 +9,13 @@ put mind
 matchwait
 
 SKILLCHECK:
-#match NEXTSKILL mind lock
+#match NEXTSKILL mind.lock
 #match NEXTSKILL dazed
 #match NEXTSKILL bewild
 #match START EXP HELP
-#put skill climb
+#put skill ath
 #matchwait
-	if $Climbing.LearningRate < 30 then goto start
+	if $Athletics.LearningRate < 30 then goto start
 	else exit
 
 NEXTSKILL:
@@ -538,13 +538,13 @@ move s
 move s
 move s
 pause
-#put skill climb
+#put skill ath
 #match climb EXP HELP
 #match climbquit mind lock
 #match climbquit dazed
 #match climbquit bewilder
 #matchwait
-	if $Climbing.LearningRate < 30 then goto CLIMB
+	if $Athletics.LearningRate < 30 then goto CLIMB
 	else goto climbquit
 
 FALLEN:

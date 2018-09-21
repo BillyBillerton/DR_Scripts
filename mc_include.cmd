@@ -18,16 +18,19 @@
 #	engineering.storage	--Container for engineering equipment (tools, deeds, spare parts, etc.)					carve
 #	remnant.storage		--Container for putting failed items, materials too small to make stuff with.			mastercraft
 #	work.material		--The stocked material type for orders. Be specific (ie. bronze-alloy, gargoyle-hide.)	mastercraft
+#	discipline		-- "blacksmith, armor, weapon, tailor, carving"
 #
 #	These variables must be set -to the letter-. Yes, this means they are case-sensitive:
-#	auto.repair		--"on" or "off" ONLY. Set if you want to repair your own metal tools (must have techs.)		mastercraft
-#	reclaim.metal	--"on" or "off" ONLY. Set if you have flux and wish to reclaim failed items.				mastercraft
+#	repair			--"on" or "off" ONLY. Set if you want to repair your tools. If repair is on and auto-repair is off it will use the Engineering tool repair. Only works in Crossing right now.						mastercraft
+#	auto.repair		--"on" or "off" ONLY. Set if you want to repair your own metal tools (must have techs.)			mastercraft
+#	reclaim.metal		--"on" or "off" ONLY. Set if you have flux and wish to reclaim failed items.				mastercraft
 #	deed.order		--"on" or "off" ONLY. Set if your products are heavy(ie. armor, stone furniture.)			mastercraft
 #	MC.Mark			--"on" or "off" ONLY. Set if you have a maker's mark you wish to use.						mastercraft, pound, grind, sew, carve, knit
 #	discipline		--"weapon", "armor", "blacksmith", "tailor", "carving" ONLY.								mastercraft
-#	work.difficulty	--"easy", "challenging", "hard" ONLY. Used for asking for work orders.						mastercraft
+#	work.difficulty		--"easy", "challenging", "hard" ONLY. Used for asking for work orders.						mastercraft
 #	order.pref		--"cloth", "leather", "knitted", "stone", "bone" ONLY. Determines the orders you keep.		mastercraft
-#
+#	get.coin		--"on" or "off ONLY. Set if you want to withdraw coins to repurchase supplies. Only works if teller is in the same map
+#	reorder			--"on" or "off ONLY. Set if you want to buy new material if you do not have enough
 #
 #	Be sure to complete your character's crafting profile before running any of the included scripts. There are some things scripting
 #	cannot do for you, such as make personal decisions.
@@ -39,51 +42,51 @@
 
 gosub location.vars
 gosub check.location
-goto $charactername
+
+var forging.storage $MC_FORGING.STORAGE
+var outfitting.storage $MC_OUTFITTING.STORAGE
+var engineering.storage backpack
+var remnant.storage bag
+put #var MC.Mark off
+var repair off
+var auto.repair off
+var get.coin on
+var reorder on
 
 
 ###########################################################################
 ### Character Profiles. Please edit these for your character(s). 
 ###########################################################################
 
-basir:
-
-#the default settings
-	 var forging.storage bag
-	 var outfitting.storage bag
-	 var engineering.storage bag
-	 var remnant.storage bag
-	 put #var MC.Mark off
-	 var auto.repair off
-
 #Forging settings
 if "%society.type" = "Forging" then
 	{
-	 var discipline weapon
-	 var work.difficulty hard
-	 var work.material iron
+	 var discipline $MC_FORGING.DISCIPLINE
+	 var work.difficulty $MC_FORGING.DIFFICULTY
+	 var work.material $MC_FORGING.MATERIAL
 	 var order.pref
 	 var main.storage %forging.storage
 	 put #var MC.Mark off
-	 var deed.order no
+	 var deed.order $MC_FORGING.DEED
 	}
 #Outfitting settings
 if "%society.type" = "Outfitting" then
 	{
-	 var discipline tailor
-	 var work.difficulty challenging
-	 var work.material burlap
-	 var order.pref cloth
+	 var discipline $MC_OUT.DISCIPLINE
+	 var work.difficulty $MC_OUT.DIFFICULTY
+	 var work.material $MC_OUT.MATERIAL
+	 var order.pref $MC_OUT.PREF
 	 var main.storage %outfitting.storage
 	 put #var MC.Mark off
-	 var deed.order no
+	 var deed.order $MC_OUT.DEED
 	}
 #Engineering settings
 if "%society.type" = "Engineering" then
 	{
 	 var discipline carving
 	 var work.difficulty challenging
-	 var work.material goblin-bone
+	 var work.material deer-bone
+	 var deed.size
 	 var order.pref bone
 	 var main.storage %engineering.storage
 	 put #var MC.Mark off
@@ -91,50 +94,6 @@ if "%society.type" = "Engineering" then
 	}
 goto end
 
-roodie:
-
-#the default settings
-	 var forging.storage sack
-	 var outfitting.storage bag
-	 var engineering.storage sack
-	 var remnant.storage bag
-	 put #var MC.Mark off
-	 var auto.repair off
-
-#Forging settings
-if "%society.type" = "Forging" then
-	{
-	 var discipline weapon
-	 var work.difficulty hard
-	 var work.material iron
-	 var order.pref
-	 var main.storage %forging.storage
-	 put #var MC.Mark off
-	 var deed.order no
-	}
-#Outfitting settings
-if "%society.type" = "Outfitting" then
-	{
-	 var discipline tailor
-	 var work.difficulty challenging
-	 var work.material cotton
-	 var order.pref cloth
-	 var main.storage %outfitting.storage
-	 put #var MC.Mark off
-	 var deed.order no
-	}
-#Engineering settings
-if "%society.type" = "Engineering" then
-	{
-	 var discipline carving
-	 var work.difficulty challenging
-	 var work.material goblin-bone
-	 var order.pref bone
-	 var main.storage %engineering.storage
-	 put #var MC.Mark off
-	 var deed.order no
-	}
-goto end
 
 
 ####################################################################################################
@@ -147,6 +106,7 @@ location.vars:
 	 var HF.room.list 442|441|443|405|404|398|402|403|409|408|399|406|407|400|410|411|401
 	 var HF.master.room 398|399|400|401
 	 var HF.work.room 405|409|403|407|411
+	 var HF.smelt.room 402|404|406|408|410
 	 var HF.grind.room %HF.work.room 
 	#Haven Outfitting
 	 var HO.room.list 448|450|449|451|458|459|455|452|453|454|456|457|460
@@ -159,23 +119,25 @@ location.vars:
 	 var HE.master.room 462|461|463|464|465|466
 	 var HE.work.room 467|468|469|464|462
 	#Crossing Forging
-	 var CF.room.list 12|13|19|16|20|15|22|23|21|17|14|18
-	 var CF.master.room 12|13|14|19|16|20|17|14|18
-	 var CF.work.room 22|23|21
-	 var CF.grind.room 17|18
+	 var CF.room.list 903|865|962|961|960|902|905|904|906|963|907|908|909
+	 var CF.master.room 903|865|962|961|960|902|905|904|906|963|907|908|909
+	 var CF.smelt.room 903|904|960|961
+	 var CF.work.room 907|908|909|962|963
+	 var CF.grind.room 962|963
 	#Crossing Outfitting
-	 var CO.room.list 927|925|926|928|931|932|933|934|935|936|929|937|938|930|939|883|924
-	 var CO.master.room 927|925|926|928|931|932|929|930|924|883
-	 var CO.work.room 931|932
-	 var CO.wheel.room 936|937|938 
-	 var CO.loom.room 933|934|935
+	 var CO.room.list 873|910|911|912|913|914|915|916|917|918|919|920|921|922|923|924
+	 var CO.master.room 873|910|911|912|913|914|915|916
+	 var CO.work.room 917|918
+	 var CO.wheel.room 922|923|924
+	 var CO.loom.room 919|920|921
 	#Crossing Engineering
-	 var CE.room.list 5|2|4|3|6|8|9|10
-	 var CE.master.room 3|5|2|4|6
-	 var CE.work.room 8|9|10
+	 var CE.room.list 851|925|874|926|927|928|929|930
+	 var CE.master.room 851|925|874|926|927|928|929|930
+	 var CE.work.room 928|929|930
 	#Lava Forge
 	 var LvF.room.list 774|777|776|775|778|782|779|784|780|786|781|783|785
 	 var LvF.master.room 775|778|782|779|784|780|786
+	 var LvF.smelt.room 778|779|780
 	 var LvF.work.room 781|783|785
 	 var LvF.grind.room 782|786|784
 	#Leth Premie Forge
@@ -188,6 +150,12 @@ location.vars:
 	 var RF.master.room 819|820|821|822|823|824|825|826|827|828|829|830|831|832
 	 var RF.work.room 830|831|832
 	 var RF.grind.room 821|822|823
+	#Ratha Outfitting
+	var RO.room.list 850|851|852|846|843|845|847|848|849|844|841|839|840|842
+	var RO.master.room 844|841|839|840|842
+	var RO.work.room 845|846
+	var RO.wheel.room 847|848|849
+	var RO.loom.room 850|851|852
 	#Shard Forging
 	 var SF.room.list 644|661|645|648|648|649|650|651|652|653|654|655|656|657|658|659|660|646
 	 var SF.master.room 644|645|649|650|653|654|655|658|646|661
@@ -205,37 +173,49 @@ location.vars:
 	 var MKF.work.room 344|345|346|347|348
 	 var MKF.grind.room %MKF.work.room
 	
+	#Repair Locations
+	 var crossing.repair.room Rangu
+	 var crossing.repair Rangu
+	 var haven.repair.room 398
+	 var haven.repair clerk
+
 	 var Master.Found 0
 	 action instant var Master.Found 1 when ^Heavily muscled for an Elf, Fereldrin|^Yalda is a plump Dwarf|^Standing at an imposing height, the Gor'Tog surveys |^Serric is a muscular Human|^Juln is a muscular Dwarf|^Hagim is slight Gnome man|^Paarupensteen is a balding plump Halfling|^Milline is a tall Elothean woman|^Talia is a honey-brown haired Human|^This well-muscled Elf stands taller than 
 	 return
 
 check.location: 
+	#gosub Crossing.%current.lore
+	#return
 	var society none
-	if "$zoneid" = "30" && contains("%HF.room.list", "$roomid") then var society Haven.Forging
-	if "$zoneid" = "30" && contains("%HO.room.list", "$roomid") then var society Haven.Outfitting
-	if "$zoneid" = "30" && contains("%HE.room.list", "$roomid") then var society Haven.Engineering
-	if "$zoneid" = "1" && contains("%CF.room.list", "$roomid") then var society Crossing.Forging
-	if "$zoneid" = "1" && contains("%CO.room.list", "$roomid") then var society Crossing.Outfitting
-	if "$zoneid" = "1" && contains("%CE.room.list", "$roomid") then var society Crossing.Engineering
-	if "$zoneid" = "90" && contains("%RF.room.list", "$roomid") then var society Ratha.Forging
-	if "$zoneid" = "67" && contains("%SF.room.list", "$roomid") then var society Shard.Forging
-	if "$zoneid" = "116" && contains("%HibF.room.list", "$roomid") then var society Hib.Forging
-	if "$zoneid" = "107" && contains("%MKF.room.list", "$roomid") then var society MerKresh.Forging
-	if "$zoneid" = "7" && contains("%LvF.room.list", "$roomid") then var society Lava.Forge
-	if "$zoneid" = "61" && contains("%LPF.room.list", "$roomid") then var society Leth.Premie.Forge
+	if "$zoneid" = "30" && matchre("%HF.room.list", "\b$roomid\b") then var society Haven.Forging
+	if "$zoneid" = "30" && matchre("%HO.room.list", "\b$roomid\b") then var society Haven.Outfitting
+	if "$zoneid" = "30" && matchre("%HE.room.list", "\b$roomid\b") then var society Haven.Engineering
+	if "$zoneid" = "1" && matchre("%CF.room.list", "\b$roomid\b") then var society Crossing.Forging
+	if "$zoneid" = "1" && matchre("%CO.room.list", "\b$roomid\b") then var society Crossing.Outfitting
+	if "$zoneid" = "1" && matchre("%CE.room.list", "\b$roomid\b") then var society Crossing.Engineering
+	if "$zoneid" = "90" && matchre("%RF.room.list", "\b$roomid\b") then var society Ratha.Forging
+	if "$zoneid" = "90" && matchre("%RO.room.list", "\b$roomid\b") then var society Ratha.Outfitting
+	if "$zoneid" = "67" && matchre("%SF.room.list", "\b$roomid\b") then var society Shard.Forging
+	if "$zoneid" = "116" && matchre("%HibF.room.list", "\b$roomid\b") then var society Hib.Forging
+	if "$zoneid" = "107" && matchre("%MKF.room.list", "\b$roomid\b") then var society MerKresh.Forging
+	if "$zoneid" = "7" && matchre("%LvF.room.list", "\b$roomid\b") then var society Lava.Forge
+	if "$zoneid" = "61" && matchre("%LPF.room.list", "\b$roomid\b") then var society Leth.Premie.Forge
 	pause 1
 	gosub %society
-return
+	return
 
 Haven.Forging:
 var master Fereldrin
 var master.room %HF.master.room
 var grind.room %HF.grind.room
 var work.room %HF.work.room
+var smelt.room %CF.smelt.room
 var deed.room 442
 var material.room 400
 var part.room 399
 var tool.room 399
+var repair.room %haven.repair.room
+var repair.clerk %haven.repair
 var society.type Forging
 return
 
@@ -247,6 +227,8 @@ var supply.room 450
 var part.room 450
 #order parts
 var tool.room 451
+var repair.room %haven.repair.room
+var repair.clerk %haven.repair
 var society.type Outfitting
 return
 
@@ -257,6 +239,8 @@ var work.room %HE.work.room
 var supply.room 466
 var part.room 466
 var tool.room 465
+var repair.room %haven.repair.room
+var repair.clerk %haven.repair
 var society.type Engineering
 return
 
@@ -265,21 +249,23 @@ var master Yalda
 var master.room %CF.master.room
 var grind.room %CF.grind.room
 var work.room %CF.work.room
-var deed.room 15
-var supply.room 15
-var part.room 14
-var tool.room 14
+var deed.room 906
+var supply.room 906
+var part.room 905
+var tool.room 905
 var society.type Forging
-return
+return 
 
 Crossing.Outfitting:
 var master Milline
 var master.room %CO.master.room
 var work.room %CO.work.room
-var supply.room 928
-var part.room 928
+var supply.room 914
+var part.room 914
 #order parts
-var tool.room 927
+var tool.room 913
+var repair.room %crossing.repair.room
+var repair.clerk %crossing.repair
 var society.type Outfitting
 return
 
@@ -287,21 +273,26 @@ Crossing.Engineering:
 var master Talia
 var master.room %CE.master.room
 var work.room %CE.work.room
-var supply.room 4
-var part.room 4
-var tool.room 2
+var supply.room 874
+var part.room 851
+var tool.room 851
+var repair.room %crossing.repair.room
+var repair.clerk %crossing.repair
 var society.type Engineering
 return
 
 Lava.Forge:
-var master None
+var master Borneas
 var master.room %LvF.master.room
 var grind.room %LvF.grind.room
 var work.room %LvF.work.room
+var smelt.room %LvF.smelt.room
 var deed.room 775
 var supply.room 775
 var part.room 777
 var tool.room 777
+var repair.room 
+var repair.clerk 
 var society.type Forging
 return
 
@@ -314,6 +305,8 @@ var deed.room 248
 var supply.room 248
 var part.room 248
 var tool.room 238
+var repair.room 
+var repair.clerk 
 var society.type Forging
 return
 
@@ -326,7 +319,21 @@ var deed.room 829
 var supply.room 829
 var part.room 819
 var tool.room 819
+var repair.room 
+var repair.clerk 
 var society.type Forging
+return
+
+Ratha.Outfitting:
+var master Master
+var master.room %RO.master.room
+var work.room %RO.work.room
+var supply.room 844
+var part.room 844
+var tool.room 842
+var repair.room
+var repair.clerk
+var society.type Outfitting
 return
 
 Shard.Forging:
@@ -338,6 +345,8 @@ var deed.room 661
 var supply.room 658
 var part.room 653
 var tool.room 653
+var repair.room 
+var repair.clerk 
 var society.type Forging
 return
 
@@ -350,6 +359,8 @@ var deed.room 415
 var supply.room 415
 var part.room 413
 var tool.room 413
+var repair.room 
+var repair.clerk 
 var society.type Forging
 return
 
@@ -362,6 +373,8 @@ var deed.room 336
 var supply.room 336
 var part.room 337
 var tool.room 337
+var repair.room 
+var repair.clerk 
 var society.type Forging
 return
 
@@ -370,13 +383,13 @@ return
 
 
 find.room:
-	 var find.room $0
-	 if ((contains("%find.room", "$roomid")) && ("$roomplayers" = "")) then return
+	var find.room $1
+	 if ((matchre("%find.room", "\b$roomid\b")) && ("$roomplayers" = "")) then return
 	 var temp 0
 	 eval temp.max count("%find.room","|")
 find.room2:
 	 gosub automove %find.room(%temp)
- 	 if ((contains("%find.room", "$roomid")) && ("$roomplayers" = "")) then
+ 	 if ((matchre("%find.room", "\b$roomid\b")) && ("$roomplayers" = "")) then
 		{
 		unvar temp
 		unvar temp.max
@@ -384,7 +397,7 @@ find.room2:
 		}
 	 math temp add 1
 	 if %temp > %temp.max then gosub find.room.wait
-	 gosub find.room2
+	 goto find.room2
 	return
 	
 find.room.wait:
@@ -399,10 +412,11 @@ find.master:
 	 var Master.Found 0
 	 var temp 0
 	 eval temp.max count("%master.room","|")
-	 pause 1
-	 send look %master
-	 pause 1
-	 if %Master.Found = 1 then
+	 #pause 1
+	 #send look %master
+	 #pause 1
+	 #if %Master.Found = 1 then
+         if matchre("$roomobjs", "%master") then
 	 {
 	 unvar temp
 	 unvar temp.max
@@ -411,9 +425,10 @@ find.master:
 find.master2:
 	 pause 1
 	 gosub automove %master.room(%temp)
-	 send look %master
-	 pause 1
-	 if %Master.Found = 1 then
+	 #send look %master
+	 #pause 1
+	 #if %Master.Found = 1 then
+         if matchre("$roomobjs", "%master") then
 		{
 		unvar temp
 		unvar temp.max
@@ -422,6 +437,7 @@ find.master2:
 	 math temp add 1
 	 if %temp > %temp.max then
 	{
+	goto find.master
 	 echo %master not found in any room specified. Check your master room list for this society!
 	 exit
 	}
@@ -446,7 +462,7 @@ automovecont1:
 
 automovecont2:
 	 pause
-	 if contains("$scriptlist", "automapper") then send #script abort automapper
+	 if matchre("$scriptlist", "automapper") then send #script abort automapper
 	 pause
 	 return
 

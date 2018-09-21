@@ -10,7 +10,7 @@
 #
 
 if_1 put #var $MC.order.noun %1
-include mc include.cmd
+include mc_include.cmd
 
 
 action var action turn when ^It seems to be picking up speed now but is still rather slow.|^Straining a bit less you add force to the grindstone, making it spin even faster
@@ -60,5 +60,6 @@ done:
 	pause .5
 	 send put my oil in my %forging.storage
 	 gosub mark
+	 pause .5
 	 send #parse GRINDING DONE
 	exit

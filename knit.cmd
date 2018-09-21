@@ -16,7 +16,7 @@
 var sew.repeat 0
 if_2 var sew.repeat %2
 if_1 put #var MC.order.noun %1
-include mc include.cmd
+include mc_include.cmd
 
 
 action var Action knit when ^push my needle|^turn my needle|^cast my needle|^knit my needle|^The .* need of more knitting

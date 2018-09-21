@@ -1,77 +1,99 @@
-#MasterCraft - by the player of Jaervin Ividen
-# A crafting script suite...
-#v 0.1.6
-#
-# Script Usage: .smelt				--smelts material in a crucible
-#
-#   Place material in crucible and start script. Be sure to have all tools on you.
-#
+#Metal Smelting
+debug 10
+var material %1
+var matstow $MC_FORGING.STORAGE
 
-var Action rod
+if "$righthand $lefthand" != "Empty Empty" then 
+		{
+		put $righthandnoun in my $MC_FORGING.STORAGE
+		put $lefthandnoun in my $MC_FORGING.STORAGE
+		}
 
-action var Action shovel when As you complete working the fire dies down and needs more fuel.
-action var Action bellows when and produces less heat from the stifled coals\.|is unable to consume its fuel\.
-action var Action turn when Upon finishing you observe clumps of molten metal accumulating along the crucible's sides.
-action var Action rod when ^push my bellows|^turn crucible|^push fuel with my shovel|^stir crucible with my rod
-action goto end when At last the metal appears to be thoroughly mixed and you pour it into an ingot mold.
-action goto Retry when \.\.\.wait|type ahead
 
-if "$righthandnoun" != "rod" && "$righthand" != "Empty" then send stow right
-if "$lefthandnoun" != "nugget" && "$lefthand" != "Empty" then send stow left
-if "$righthandnoun" != "rod" then send get my rod
-pause 1
+action INSTANT goto finish when ingot mold
 
-Action:
-save %Action
-gosub %Action
-goto Action
+if_1 goto SmeltStart
+echo Usage is: .smelt <material>
 
-turn:
-	 send turn crucible
-	 pause 1
-	return
-
-bellows:
-	if !contains("$righthandnoun", "bellows") then
-	{
-	 send stow right
-	 send get my bellows
-	 waitforre ^You get
-	}
-	 send push my bellows
-	 pause 1
-	return
-
-shovel:
-	if !contains("$righthandnoun", "shovel") then
-	{
-	 send stow right
-	 send get my shovel
-	 waitforre ^You get
-	}
-	 send push fuel with my shovel
-	 pause 1
-	return
-
-rod:
-	if !contains("$righthandnoun", "rod") then
-	{
-	 send stow right
-	 send get my rod
-	 waitforre ^You get
-	}
-	 send stir crucible with my rod
-	 pause 1
-	return
-	
-Retry:
+SmeltStart:
+	action (settype) on
+	action (settype) var mattype $1 when %material (\w+) 
+	send look in my %matstow
 	pause 1
-	var Action %s
-	goto Action
+	action (settype) off
+	match putmat You get
+	match end What do you want to get
+	match end What were you referring
+	send get my %material %mattype
+	matchwait
 
-end:
-pause 1
-echo
-echo *** All done
-echo
-send stow right
+GetMat:
+	match putmat You get
+	match gettool What do you want to get	
+	match gettool What were you referring
+	send get my %material %mattype
+	matchwait
+
+PutMat:
+	match toomuch at once would be dangerous
+	match getmat You put
+	send put %mattype in cruc
+	matchwait
+
+TooMuch:
+	send put my %material %mattype in my %matstow
+	goto gettool
+
+GetTool:
+	pause 1
+	put get my rod
+	goto stir
+
+Stir:
+	pause
+	pause 1
+	match turn crucible's sides
+	match fuel needs more fuel
+	match bellows stifled coals
+	match bellows unable to consume its fuel
+	match stir Roundtime
+	send stir cruc with rod
+	matchwait
+
+Fuel:
+	pause
+	pause 1
+	send get my shov
+	send push fuel with shov
+	pause
+	pause 1
+	send stow left
+	goto stir
+
+Bellows:
+	pause
+	pause 1
+	send get my bell
+	send push bell
+	pause
+	pause 1
+	send stow left
+	goto stir
+
+Turn:
+	pause
+	pause 1
+	send turn cruc
+	goto stir
+
+Finish:
+	pause
+	pause 1
+	send put ing in my %matstow
+	send stow right
+	goto end
+
+End:
+	put #parse SMELTING DONE
+	Echo All material used. Script complete.
+	exit

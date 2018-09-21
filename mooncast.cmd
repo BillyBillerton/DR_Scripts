@@ -4,7 +4,7 @@ var time 0
 var aug_spellname shadows
 var augmana 15
 var ward_spellname maf
-var wardmana 15
+var wardmana 30
 var util_spellname pg
 var utilmana 30
 var shadowlingtimer 4500
