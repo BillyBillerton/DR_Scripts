@@ -34,7 +34,7 @@
      var polearm-maneuver none
      var crossbow crossbow
      var crossbow-ammo bolt
-     var crossbow-shoot fire
+     var crossbow-shoot poach
      var crossbow-snapshots off
      var bow none
      var bow-ammo arrow
@@ -158,18 +158,18 @@
 #% THIEF KHRI
      var thief-khri on
      var kneel-for-khris on
-     var smalledge-khri avoid prowess haste
-     var largeedge-khri avoid prowess haste
-     var twohandededge-khri none
-     var smallblunt-khri none
-     var largeblunt-khri none
-     var twohandedblunt-khri none
-     var staves-khri none
-     var polearm-khri none
+     var smalledge-khri avoid prowess haste dark damp
+     var largeedge-khri avoid prowess haste dark damp
+     var twohandededge-khri avoid prowess haste dark damp
+     var smallblunt-khri avoid prowess haste dark damp
+     var largeblunt-khri avoid prowess haste dark damp
+     var twohandedblunt-khri avoid prowess haste dark damp
+     var staves-khri avoid prowess haste dark damp
+     var polearm-khri avoid prowess haste dark damp
      var crossbow-khri steady prowess avoid haste
      var bow-khri none
      var slings-khri none
-     var lightthrown-khri none
+     var lightthrown-khri avoid prowess haste dark damp
      var heavythrown-khri none
      var offhand-khri none
      var brawl-khri strike avoid prowess
