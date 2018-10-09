@@ -1,4 +1,4 @@
 top:
 put glance
-pause 29
+pause 30
 goto top
