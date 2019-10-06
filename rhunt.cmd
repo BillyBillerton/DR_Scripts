@@ -34,7 +34,11 @@
      var polearm-maneuver none
      var crossbow crossbow
      var crossbow-ammo bolt
+<<<<<<< HEAD
      var crossbow-shoot snipe
+=======
+     var crossbow-shoot poach
+>>>>>>> d359c2f3bedbb25bc6c2dd252a3fcba944d67820
      var crossbow-snapshots off
      var bow none
      var bow-ammo arrow
@@ -158,6 +162,7 @@
 #% THIEF KHRI
      var thief-khri on
      var kneel-for-khris on
+<<<<<<< HEAD
      var smalledge-khri avoid dark damp prowess haste harrier
      var largeedge-khri avoid avoid dark damp prowess haste harrier
      var twohandededge-khri avoid dark damp prowess haste harrier
@@ -170,6 +175,20 @@
      var bow-khri none
      var slings-khri avoid dark damp prowess haste harrier
      var lightthrown-khri none
+=======
+     var smalledge-khri avoid prowess haste dark damp
+     var largeedge-khri avoid prowess haste dark damp
+     var twohandededge-khri avoid prowess haste dark damp
+     var smallblunt-khri avoid prowess haste dark damp
+     var largeblunt-khri avoid prowess haste dark damp
+     var twohandedblunt-khri avoid prowess haste dark damp
+     var staves-khri avoid prowess haste dark damp
+     var polearm-khri avoid prowess haste dark damp
+     var crossbow-khri steady prowess avoid haste
+     var bow-khri none
+     var slings-khri none
+     var lightthrown-khri avoid prowess haste dark damp
+>>>>>>> d359c2f3bedbb25bc6c2dd252a3fcba944d67820
      var heavythrown-khri none
      var offhand-khri none
      var brawl-khri strike dark damp avoid prowess

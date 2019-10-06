@@ -1,5 +1,6 @@
 goto START
 
+
 WAIT:
 pause 60
 MINDCHECK:
@@ -23,6 +24,7 @@ echo climbing done
 exit
 
 START:
+put #goto 14
 
 
 CLIMB:
