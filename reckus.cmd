@@ -46,8 +46,8 @@
 	var jugcounting yes
 
 ### If you want to read through one chart at a time set these variables
-	var readcomp yes
-	var componce yes
+	var readcomp no
+	var componce no
 	# Where you keep your compendium
 	var compcon backpack
 	var comp1 compendium
@@ -57,9 +57,9 @@
 	var assess yes
 	var quiet off
 	var vocals-yes-or-no no
-	var percu-instrument "stamping stick"
-	var string-instrument lute
-	var wind-instrument flute
+	var percu-instrument "shaman drum"
+	var string-instrument kithara
+	var wind-instrument mirliton
 	var first strings
 	var second winds
 	var third percs
@@ -69,9 +69,9 @@
 	# What you clean instruments with
 	var cleaning-thing cloth
 	# Where you keep your instruments
-	var r-container case
+	var r-container med.case
 	# Where you keep your cleaning thing
-	var cleancontainer case
+	var cleancontainer med.case
 
 
 ## Script below this line
@@ -1135,7 +1135,7 @@ herb-19:
 put recall herb junliar stem
 return
 
-include jug.cmd
-include origami.cmd
-include cam.cmd
-include comp.cmd
+#include jug.cmd
+#include origami.cmd
+#include cam.cmd
+#include comp.cmd

@@ -63,7 +63,7 @@
      var alwayshideFORranged off
  
      var targetmagic on
-     var TM-spell-1 do 10
+     var TM-spell-1 do 20
      var TM-spell-2 none
      var TM-spell-3 none
      var TM-weapon none
@@ -72,7 +72,7 @@
 #% Debil cast can be set to area, creature, a specific command like "malediction offense" or none for general debil casts.
 
      var debilitation on
-     var debil-spell mb 15
+     var debil-spell mb 30
      var debil-cast none
 
      var arrange-times 5
@@ -112,22 +112,22 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 4 80 100
-     var largeedge-stance 100 4 80 100
-     var twohandededge-stance 100 4 80 100
-     var smallblunt-stance 100 4 80 100
-     var largeblunt-stance 100 4 80 100
-     var twohandedblunt-stance 100 4 80 100
-     var staves-stance 100 4 80 100
-     var polearm-stance 100 4 80 100
+     var smalledge-stance 100 40 40 100
+     var largeedge-stance 100 40 40 100
+     var twohandededge-stance 100 40 40 100
+     var smallblunt-stance 100 40 40 100
+     var largeblunt-stance 100 40 40 100
+     var twohandedblunt-stance 100 40 40 100
+     var staves-stance 100 40 40 100
+     var polearm-stance 100 40 40 100
      var crossbow-stance 100 4 80 100
      var bow-stance 100 4 80 100
      var slings-stance 100 4 80 100
-     var lightthrown-stance 100 4 80 100
-     var heavythrown-stance 100 4 80 100
+     var lightthrown-stance 100 40 40 100
+     var heavythrown-stance 100 40 40 100
      var offhand-stance 100 4 80 100
-     var brawl-stance 100 4 80 100
-     var TM-stance 100 4 80 100
+     var brawl-stance 100 40 40 100
+     var TM-stance 100 40 40 100
 
 #% WARMAGE SUMMONING
      var wm-align air

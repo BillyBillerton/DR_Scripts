@@ -1,5 +1,5 @@
-var container1 haversack
-var container2 backpack
+var container1 rugu
+var container2 tote
 var container3 tote
 var lockring yes
 var thief_hide no

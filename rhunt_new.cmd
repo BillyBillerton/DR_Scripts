@@ -21,14 +21,14 @@
 
 
      var smalledge thrusting.blade
-     var largeedge battle.axe
-     var twohandededge marauder.blade
+     var largeedge bastard.sword
+     var twohandededge none
      var edge-maneuver none
      var smallblunt none
      var largeblunt none
      var twohandedblunt none
      var blunt-maneuver none
-     var staves nightstick
+     var staves none
      var staves-maneuver none
      var polearm none
      var polearm-maneuver none
@@ -45,16 +45,16 @@
      var sling-shoot fire
      var sling-snapshots off
      var ranged-maneuver none
-     var lightthrown cuska
+     var lightthrown none
      var lightthrown-attack throw
      var lightthrown-bond off
      var heavythrown none
      var heavythrown-bond off
      var heavythrown-attack throw
      var thrown-maneuver none
-     var offhand cuska
+     var offhand none
      var offhand-type thrown
-     var offhand-bond off
+     var offhand-bond on
      var brawl on
      var brawl-maneuver none
 
@@ -89,14 +89,14 @@
      var smallblunt-attack-limit 60
      var largeblunt-attack-limit 60
      var twohandedblunt-attack-limit 60
-     var staves-attack-limit 20
+     var staves-attack-limit 60
      var polearm-attack-limit 60
      var crossbow-attack-limit 60
      var bow-attack-limit 60
      var slings-attack-limit 60
-     var lightthrown-attack-limit 20
+     var lightthrown-attack-limit 60
      var heavythrown-attack-limit 60
-     var offhand-attack-limit 20
+     var offhand-attack-limit 60
      var brawl-attack-limit 60
      var TM-attack-limit 60
 
@@ -112,21 +112,21 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 4 80 100
-     var largeedge-stance 100 4 80 100
-     var twohandededge-stance 100 4 80 100
-     var smallblunt-stance 100 4 80 100
-     var largeblunt-stance 100 4 80 100
-     var twohandedblunt-stance 100 4 80 100
-     var staves-stance 100 4 80 100
-     var polearm-stance 100 4 80 100
-     var crossbow-stance 100 0 80 100
-     var bow-stance 100 0 80 100
-     var slings-stance 100 4 80 100
-     var lightthrown-stance 100 4 80 100
-     var heavythrown-stance 100 4 80 100
-     var offhand-stance 100 4 80 100
-     var brawl-stance 100 4 80 100
+     var smalledge-stance 61 60 60 100
+     var largeedge-stance 61 60 60 100
+     var twohandededge-stance 61 60 60 100
+     var smallblunt-stance 61 60 60 100
+     var largeblunt-stance 61 60 60 100
+     var twohandedblunt-stance 61 60 60 100
+     var staves-stance 61 60 60 100
+     var polearm-stance 61 60 60 100
+     var crossbow-stance 61 60 60 100
+     var bow-stance 61 60 60 100
+     var slings-stance 61 60 60 100
+     var lightthrown-stance 61 60 60 100
+     var heavythrown-stance 61 60 60 100
+     var offhand-stance 61 60 60 100
+     var brawl-stance 61 60 60 100
      var TM-stance 61 60 60 100
 
 #% WARMAGE SUMMONING
@@ -158,39 +158,39 @@
 #% THIEF KHRI
      var thief-khri on
      var kneel-for-khris on
-     var smalledge-khri avoid dark damp prowess haste harrier
-     var largeedge-khri avoid avoid dark damp prowess haste harrier
-     var twohandededge-khri avoid dark damp prowess haste harrier
+     var smalledge-khri avoid prowess haste
+     var largeedge-khri avoid prowess haste
+     var twohandededge-khri none
      var smallblunt-khri none
      var largeblunt-khri none
      var twohandedblunt-khri none
      var staves-khri none
      var polearm-khri none
-     var crossbow-khri steady dark damp prowess avoid haste
+     var crossbow-khri steady prowess avoid haste
      var bow-khri none
-     var slings-khri avoid dark damp prowess haste harrier
+     var slings-khri none
      var lightthrown-khri none
      var heavythrown-khri none
      var offhand-khri none
-     var brawl-khri strike dark damp avoid prowess
+     var brawl-khri strike avoid prowess
 
 #% THIEF AMBUSH
      var thief-ambush on
      var smalledge-ambush stun
-     var largeedge-ambush stun
+     var largeedge-ambush slash
      var twohandededge-ambush none
      var smallblunt-ambush none
      var largeblunt-ambush none
      var twohandedblunt-ambush none
-     var staves-ambush stun
+     var staves-ambush none
      var polearm-ambush none
-     var crossbow-ambush none
+     var crossbow-ambush choke
      var bow-ambush none
      var slings-ambush none
      var lightthrown-ambush none
      var heavythrown-ambush none
      var offhand-ambush none
-     var brawl-ambush none
+     var brawl-ambush stun
 
 
 #% BARB FORMS
@@ -235,27 +235,27 @@
 
 
 #% SPELL BUFFS
-     var buff-spell-1 none
-     var buff-camb-1 none
-     var buff-spell-2 none
-     var buff-camb-2 none
+     var buff-spell-1 col 10
+     var buff-camb-1 12
+     var buff-spell-2 cv 10
+     var buff-camb-2 12
      var buff-spell-3 none
-     var buff-camb-3 none
-     var buff-spell-4 none
-     var buff-camb-4 none
-     var buff-spell-5 none
-     var buff-camb-5 none
+     var buff-camb-3 0
+     var buff-spell-4 ease 10
+     var buff-camb-4 12
+     var buff-spell-5 psy 10
+     var buff-camb-5 12
      var buff-spell-6 none
-     var buff-camb-6 none
+     var buff-camb-6 0
      var buff-spell-7 none
-     var buff-camb-7 none
+     var buff-camb-7 0
      var buff-spell-8 none
-     var buff-camb-8 none
+     var buff-camb-8 0
      var buff-spell-9 none
-     var buff-camb-9 none
+     var buff-camb-9 0
      var buff-spell-10 none
-     var buff-camb-10 none
-     var minimum-attunement 0
+     var buff-camb-10 0
+     var minimum-attunement 40
      var camb-item thigh bag
 
      var cyclics off
@@ -281,13 +281,13 @@
 
 
 #% CONTAINERS
-     var sheath-1-name baldric
-     var sheath-1-weapons thrusting.blade|nightstick|marauder.blade
-     var sheath-2-name backpack
-     var sheath-2-weapons cuska|battle.axe
-     var sheath-3-name haversack
-     var sheath-3-weapons crossbow
-     var worn-weapons bow
+     var sheath-1-name none
+     var sheath-1-weapons mallet|stiletto|crossbow|halberd|club
+     var sheath-2-name none
+     var sheath-2-weapons none
+     var sheath-3-name ruckasck
+     var sheath-3-weapons scimitar|bola
+     var worn-weapons bardiche|bardiche
 
 
 
@@ -300,60 +300,29 @@
 #% will auto check for your fatigue & shit.
 #% just set the vars above to your desire and start it up in the area you want to hunt at, will work anywhere :)
 #%
- 
- 
- 
+
+
+
 #%
 #%
 #% DONT TOUCH ANYTHING BELOW HERE
 #%
 #%
 #%
-var randomskill off
-if_1 then
-{  
-    if (("%1" = "off" || "%1" = "on") || ((%1 > 0) && (%1 < 18)) then
-    {
-        setvariable randomskill %1
-        math randomskill subtract 1
-        goto infostart
-    }
- 
-    echo First Argument must be "off" or a number from the table below:
-    echo 1. Small Edge
-    echo 2. Large Edge
-    echo 3. Two Handed Edge
-    echo 4. Small Blunt
-    echo 5. Large Blunt
-    echo 6. Two Handed Blunt
-    echo 7. Staves
-    echo 8. Polearms
-    echo 9. Crossbow
-    echo 10. Bow
-    echo 11. Slings
-    echo 12. Heavy Thrown
-    echo 13. Light Thrown
-    echo 14. Offhand
-    echo 15. Brawl
-    echo 16. Targeted Magic
-    echo 17. Modules
-    exit
-   
-}
- 
- 
-infostart:
+
+
+
 put info
      waitforre Guild: *(\w+)
      var guild $1
- 
+
      var starttime $gametime
      var internal-attunement %minimum-attunement
      math internal-attunement add 20
      if %internal-mana > 99 then var internal-mana 99
- 
+
      action goto script-end when eval %t > %timelimit
- 
+
      var offhandthr throw|thrown|throwing|lt|ht|LT|HT
      var offhandmelee melee|attack|tactic|tactics|att|none
      
@@ -362,20 +331,20 @@ put info
      var skillmods swap skill|skill change|skill swap|skill|swap|change|weapon|per skill|per change|per swap
      var cyclemods per cycle|each cycle|when locked|locked|cycle
      var timermods timer|timed|time
- 
+
      action instant setvariable arranged 10 when Try killing .* before you arrange it
      action put attack when You can not slam with
- 
+
      action instant setvariable tactics $2|$4 when by landing (a|an) (\w+) and (a|an) (\w+)
      action instant setvariable tactics $2|attack when by landing (a|an) (\w+)\.
      action instant setvariable tactics $2|$4|$6 when by landing (a|an) (\w+), (a|an) (\w+) and (a|an) (\w+)
      action instant setvariable tactics $2|$4|$6|$8 when by landing (a|an) (\w+), (a|an) (\w+), (a|an) (\w+) and (a|an) (\w+)
- 
+
      action instant setvariable hit-track 9999 when SWAPSKILL
- 
+
      action instant setvariable crittername $1 when You turn to face .* (\S+)(\.|,)
      action instant setvariable crittername $1 when You .* are facing .* (\w+) .(\d+)
- 
+
      var emptyspot1 purple dinosaur
      var emptyspot2 pink zebra
      
@@ -383,38 +352,32 @@ put info
      var maneuver-timer $gametime
      math maneuver-timer add 70
      var attack-limit 30
- 
- 
- 
+
+
+
      var weaponnames %smalledge|%largeedge|%twohandededge|%smallblunt|%largeblunt|%twohandedblunt|%staves|%polearm|%crossbow|%bow|%slings|%heavythrown|%lightthrown|%offhand|%brawl|%targetmagic|%modules
      var weapons smalledge|largeedge|twohandededge|smallblunt|largeblunt|twohandedblunt|staves|polearm|crossbow|bow|slings|heavythrown|lightthrown|offhand|brawl|TM|modules
      var stances smalledge-stance|largeedge-stance|twohandededge-stance|smallblunt-stance|largeblunt-stance|twohandedblunt-stance|staves-stance|polearm-stance|crossbow-stance|bow-stance|slings-stance|heavythrown-stance|lightthrown-stance|offhand-stance|brawl-stance|TM-stance|smalledge-stance|smalledge-stance|smalledge-stance
      var skills small edge|large edge|2HE|small blunt|large blunt|2HB|staves|pole|crossbow|bow|sling|HT|LT|offhand|brawl|targeted magic|module
      if matchre("%offhandthr","%offhand-type") then var attacks tactics|tactics|tactics|tactics|tactics|tactics|tactics|tactics|load|load|load|throw|throw|offhand|tactics|target|module
      if matchre("%offhandmelee","%offhand-type") then var attacks tactics|tactics|tactics|tactics|tactics|tactics|tactics|tactics|load|load|load|throw|throw|tactics|tactics|target|module
- 
- 
+
+
      var edges small edge|large edge|2HE
      var blunts small blunt|large blunt|2HB
      var loadedweapons bow|crossbow|sling
      var thrownweapons HT|LT
- 
+
      var offhand-maneuver none
- 
+
      var atttype throw
- 
+
      if matchre("%offhandthr","%offhand-type") then var offhand-type thrown
      if matchre("%offhandthr","%offhand-type") then var offhand-type melee
- 
+
      var SkillTrack 0
      eval SkillCount count("%weapons","|")
      math SkillCount add 1
-     if "%randomskill" = "on" then
-     {
-    random 1 %SkillCount
-    setvariable SkillTrack %r
-     }
-     if ((%randomskill < 17) && (%randomskill > 0)) then setvariable SkillTrack %randomskill
      setvariable range 0
      eval HolderCount count("%box-holders","|")
      math HolderCount add 1
@@ -426,8 +389,6 @@ put info
      action setvariable $1 $2 when SET (\w+) (\w+)
      action setvariable $1 $2 when SET (\w+) (\d+)
      action var lost.target 1 when pattern dissipates with the loss of your
- 
- 
      eval CurrentStorage element("%box-holders", %BoxStowTrack)
      action instant setvariable range 1 when (closes to pole range on you|closes to melee range on you|begins to advance on you|advances from nearby)
      action instant setvariable range 0 when (You are already as far away|You retreat from combat|You sneak back out of combat)
@@ -488,24 +449,24 @@ put info
      if "%buff-spell-8" = "none" then var buff-dur-8 999999999999999
      if "%buff-spell-9" = "none" then var buff-dur-9 999999999999999
      if "%buff-spell-10" = "none" then var buff-dur-10 999999999999999
-    if "%buff-spell-1" != "none" then
-    {
-        var preparedspell %buff-spell-1
-        var buffer %buff-spell-1
-        gosub set-dur
-    }
-    if "%buff-spell-2" != "none" then
-    {
-        var preparedspell %buff-spell-2
-        var buffer %buff-spell-2
-        gosub set-dur
-    }
-    if "%buff-spell-3" != "none" then
-    {
-        var preparedspell %buff-spell-3
-        var buffer %buff-spell-3
-        gosub set-dur
-    }
+	if "%buff-spell-1" != "none" then
+	{
+		var preparedspell %buff-spell-1
+		var buffer %buff-spell-1
+		gosub set-dur
+	}
+	if "%buff-spell-2" != "none" then
+	{
+		var preparedspell %buff-spell-2
+		var buffer %buff-spell-2
+		gosub set-dur
+	}
+	if "%buff-spell-3" != "none" then
+	{
+		var preparedspell %buff-spell-3
+		var buffer %buff-spell-3
+		gosub set-dur
+	}
      gosub timer
      var align-it 0
      if "%guild" = "Warrior" then if "%wm-align" != "none" then if "%wm-align" != "off" then var align-it 1
@@ -513,23 +474,23 @@ put info
      if "%guild" = "Thief" then gosub thief-khri
      if "%1" = "buff" then gosub spell-buffs
      if "%1" = "buff" then put #script pause
- 
- 
- 
+
+
+
 swap-skills:
      if "%attack" = "module" then var SkillTrack 0
      if $mana > %minimum-attunement then gosub spell-buffs
      if "%skill" = "reset" then var SkillTrack 0
      if %SkillTrack > %SkillCount then var SkillTrack 0
      var hit-track 0
- 
+
      if "%skill" = "HT" then var thrown %heavythrown
      if "%skill" = "LT" then var thrown %lightthrown
      if "%skill" = "offhand" then var thrown %offhand
      if "%skill" = "offhand" then if "$lefthand" = "Empty" then gosub verb get %offhand
      if "%skill" = "HT" then if "$righthand" = "Empty" then gosub verb get %heavythrown
      if "%skill" = "LT" then if "$righthand" = "Empty" then gosub verb get %lightthrown
- 
+
      var autoswap-tracker 0
      var gettmweapon 0
      if "%skill" = "targeted magic" then if "%TM-weapon" != "none" then if "%TM-weapon" != "off" then var gettmweapon 1
@@ -573,14 +534,14 @@ swap-skills:
      if "$righthand" = "bar mace" then gosub swap-sword
      if "%skill" = "module" then gosub check-mods-cycle
      if "%skill" = "module" then goto swap-skills
- 
- 
+
+
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
- 
+
      if matchre("$roomobjs","%ammotypes") then gosub verb stow $0
      if matchre("$roomobjs","%ammotypes") then gosub verb stow $0
      if matchre("$roomobjs","%ammotypes") then gosub verb stow $0
@@ -612,7 +573,7 @@ swap-skills:
      if "%guild" = "Warrior" then if "%wm-pathway" != "none" then if "%wm-pathway" != "off" then var align-it 1
      if %align-it = 1 then gosub wm-pathway
      goto %attack
- 
+
 stow-wear:
      if "$righthand" = "Empty" then if "$lefthand" = "Empty" then return
      if matchre("%WeapName","%sheath-1-weapons") then gosub verb sheath my %WeapName
@@ -620,7 +581,7 @@ stow-wear:
      if matchre("%WeapName","%sheath-3-weapons") then gosub verb sheath my %WeapName
      if matchre("%WeapName","%worn-weapons") then gosub verb wear my %WeapName
      return
- 
+
 change-stance:
      if "%change-stance" != "on" then return
      var tempstance %$0
@@ -628,7 +589,7 @@ change-stance:
      if "%tempstance = "off" then return
      gosub verb stance set %tempstance
      return
- 
+
 swap-sword.p:
      pause 0.5
 swap-sword:
@@ -668,17 +629,17 @@ swap-sword.d:
      if "$1" = "medium" then if "%skill" = "small edge" then return
      if "$1" = "medium" then if "%skill" = "small blunt" then return
      goto swap-sword
- 
- 
+
+
 stealthEXP:
      if %stealths-locked = 1 then if $Stealth.LearningRate > 10 then return
      var stealths-locked 0
      if $Stealth.LearningRate < 34 then return
      var stealths-locked 1
      return
- 
- 
- 
+
+
+
 attack.p:
      pause 0.5
 attack:
@@ -731,8 +692,8 @@ ambush:
      match tactics You are unable to muster the energy
      matchwait 10
      goto attack
- 
- 
+
+
 throw.p:
      pause 0.5
 throw:
@@ -776,8 +737,8 @@ thrown-maneuver:
      math maneuver-timer add 70
      if "%thrown-maneuver" != "off" then if "%thrown-maneuver" != "none" then var atttype maneuver %thrown-maneuver
      return
- 
- 
+
+
 offhand.p:
      pause 0.5
 offhand:
@@ -807,7 +768,7 @@ put throw left
      match get.throw Roundtime
      matchwait 10
      goto get.throw
- 
+
 get.throw.p:
      pause 0.5
 get.throw:
@@ -815,7 +776,7 @@ get.throw:
      if $health < 50 then goto script-end
      if "%skill" = "HT" then var thrown %heavythrown
      if "%skill" = "LT" then var thrown %lightthrown
-put get %thrown    
+put get %thrown     
      if "%skill" = "LT" then if "%lightthrown-bond" = "on" then put invoke bond
      if "%skill" = "LT" then if "%lightthrown-bond" = "on" then pause 1
      if "%skill" = "LT" then if "%lightthrown-bond" = "on" then goto %attack
@@ -850,7 +811,7 @@ debil:
      if "%debil-cast" != "creature" then if "%debil-cast" != "area" then if "%debil-cast" != "none" then put #send cast %debil-cast
      pause 0.5
      return
- 
+
 tactics:
      goto face-next
 face-next.p:
@@ -890,7 +851,7 @@ empathbrawl:
      var tactics circle|bob|weave|circle|bob|weave
      gosub verb app %crittername quick
      goto analyze.d
- 
+
 analyze.p:
      pause 0.5
 analyze:
@@ -919,7 +880,7 @@ analyze.reset:
      goto analyze
 analyze.dpp:
      pause 0.5
-     goto analyze.d    
+     goto analyze.d     
 expertise-check:
      if "%expertise" = "off" then return
      if "%expertise" = "none" then return
@@ -931,7 +892,7 @@ expertise-check:
      if %expertise-track > 3 then var expertise-track 0
      if %expertise-track = 0 then goto expertise-check
      return
- 
+
 analyze-baseattacks:
      var tactics attack|attack|attack
 analyze.d:
@@ -967,7 +928,7 @@ tactic-maneuver:
      if "%maneuver-type" = "polearm" then if "%polearm-maneuver" != "off" then if "%polearm-maneuver" != "none" then var NextMove maneuver %polearm-maneuver
      if "%skill" = "brawl" then if "%brawl-maneuver" != "none" then var NextMove maneuver %brawl-maneuver
      if "%NextMove" = "none" then goto analyze
- 
+
 tactic-attack.p:
      pause 0.5
 tactic-attack:
@@ -997,7 +958,7 @@ tactic-attack:
 tactic-attack.wx:
      pause 5
      goto tactic-attack
- 
+
 thief-ambush:
      if "%guild" != "Thief" then return
      if "%thief-ambush" != "on" then return
@@ -1006,8 +967,7 @@ thief-ambush:
      if "%amb" = "off" then return
      if "%amb" = "none" then return
 ambushing:
-     gosub ambushstalk
-     if $hidden = 0 then goto ambushing
+     gosub stalk
 put ambush %amb
      match ambushing type ahead
      match ambushing ...wait
@@ -1021,10 +981,10 @@ put ambush %amb
      matchwait
 thief-ambush.d:
      return
- 
- 
- 
- 
+
+
+
+
 pray-kill:
      var pray-tracker 0
      if "%guild" != "Cleric" then return
@@ -1033,7 +993,7 @@ pray-kill:
      gosub verb pray murrula
      gosub verb stand
      return
- 
+
 load3.p:
      pause 0.5
 load3:
@@ -1044,9 +1004,9 @@ put load
      matchwait
 load3.d:
      return
- 
- 
- 
+
+
+
 load.p:
      pause 0.5
 load:
@@ -1125,7 +1085,7 @@ ranged-maneuver:
      var maneuver-timer $gametime
      math maneuver-timer add 70
      return
- 
+
 aiming:
      pause 0.5
      math targetwait add 1
@@ -1145,8 +1105,8 @@ fire:
      if "%skill" = "bow" then var firetype %bow-shoot
      if "%skill" = "crossbow" then var firetype %crossbow-shoot
      if "%skill" = "sling" then var firetype %sling-shoot
-     if "%firetype" = "snipe" then gosub ambuhshstalk
-     if "%firetype" = "poach" then gosub ambushstalk
+     if "%firetype" = "snipe" then gosub stalk
+     if "%firetype" = "poach" then gosub stalk
      if $standing = 0 then gosub verb stand
      var stalkit 0
      if "%firetype" = "fire" then if "%train-stealths" = "on" then if "%stealths-locked" = 0 then var stalkit 1
@@ -1163,21 +1123,15 @@ fire:
      match load Roundtime
      matchwait 5
      goto load
- 
+
 stalk:
      if $standing = 0 then gosub verb stand
      if $Stealth.LearningRate > 32 then if "%alwayshideFORmelee" = "off" then if "%alwayshideFORranged" = "off" then return
      gosub verb hide
      gosub verb stalk
      return
- 
-ambushstalk:
-     if $standing = 0 then gosub verb stand
-#     if $Stealth.LearningRate > 32 then if "%alwayshideFORmelee" = "off" then if "%alwayshideFORranged" = "off" then return
-     gosub verb hide
-     gosub verb stalk
-     return
- 
+
+
 target.p:
      pause 0.5
 target:
@@ -1254,8 +1208,8 @@ put cast
      match target.p Roundtime
      match target.p You raise
      matchwait
- 
- 
+
+
 killed:
      if matchre("$roomobjs","(\w+) which appears dead") then var critname $1
      math pray-tracker add 1
@@ -1300,7 +1254,7 @@ skip-skin:
      if matchre("$roomobjs","drake head arrow") then gosub verb stow drake arrow
      if matchre("$roomobjs","drake head arrow") then gosub verb stow drake arrow
      if matchre("$roomobjs","drake head arrow") then gosub verb stow drake arrow
- 
+
 #%     if matchre("$roomobjs","which appears dead") then goto killed
      if $mana > %minimum-attunement then gosub spell-buffs
      if matchre("$righthand","riot") then gosub load3
@@ -1318,21 +1272,15 @@ put skill %skill
      gosub check-mods-kill
      pause
      goto %attack
- 
+
 perc:
      if "%guild" = "Barbarian" then return
      if "%guild" = "Thief" then return
      if "%guild" = "Trader" then return
-     if "%guild" = "Moon" then
-     {
-    put perc mana
-    wait
-    pause 1
-    return
-     }
+     if "%guild" = "Moon Mage" then return
      gosub verb perc
      return
- 
+
 commune:
      var commune-time $gametime
      math commune-time add 900
@@ -1342,7 +1290,7 @@ commune:
 put .meraudcommune
      waitfor SCRIPT DONE
      return
- 
+
 arrange-times:
      var arranged 0
 arranging:
@@ -1351,8 +1299,8 @@ arranging:
      gosub verb arrange %arrangeverb
      math arranged add 1
      goto arranging
- 
- 
+
+
 necrohealcheck:
      if "%necro-selfheal" = "off" then return
      pause
@@ -1378,16 +1326,14 @@ necro-selfheal.set:
      goto necro-selfheal
 skip-necroheal:
      return
- 
- 
+
+
      
- 
- 
- 
+
+
+
 fatigue-return:
      put bob
-     wait
-     pause .5
      if $stamina > 95 then return
      pause 0.5
      goto fatigue-return
@@ -1409,11 +1355,11 @@ put %verb
      match verb.p still stunned
      match verb.p you don't feel like fighting
      match verb.p can't do that while entangled in a web
-     matchre verb.d (skin briefly withers and tightens|fluid and stealthy movements|lick the tip of your finger and trace|Having no further use|You focus on infusing|You secure|You focus on manipulating|You lack the necessary|You release an accompaniment|The first gentle notes|You let your voice fade|You begin to chant a mesmerizing|With a rising crescendo in your voice|You begin your enchante|The air gradually stills|With a sharp cut to your voice|A few fleeting|You begin to hum the soothing|marches off and become gradually quieter|With a resounding|As your rendition of|You release an accompaniment|You begin to sing|flick of your wrist you stealthily unsheathe|Praying for|eyes darken to black as a starless night|release an accompaniment of elemental air|begin to chant a mesmerizing cadence designed|into your bundle|You release an accompaniment of elemental fire|you begin to chant the rhythm that heralds|trace a careful sigil|You raise your arms skyward|mutter a foul-sounding phrase to yourself|trace a curving sigil|that is already in your inventory|determine anything about this creature|mutter blasphemies to yourself|already dead|mutter incoherently to yourself while preparing|wailing of lost souls accompanies|has already been arranged|blue frost crackles up your arms|you can't arrange|Your heart skips a beat|newfound fluidity of your mind|orange flames blaze between your fingertips|You deftly|You strap|You stuff|With calm movements|You attach|You remove|You can also|Smiling slyly|not ready|You clench your hands|You hold out your arms to either side as|You fade in|You whisper the final word of your spell so that none may notice your effort|too cluttered|Stalk what|You clap|You speak|Arrange what|With rigid movements|You close yours eyes|With tense movements|You let your concentration|You make a holy gesture|cannot be skinned|You find yourself unable to hunt|could not find what|You clap your hands|You easily strap|That area is not bleeding|You take a step back|could not find what|You strain, but cannot focus your mind|You attempt to relax your mind|You get|You put|STOW HELP|You push|think pushing that would have any effect|You move|You're already using the Sight|You have not recovered from your previous use|careful focus, you adjust your eyes to see in shadow as they|You close your eyes|You're not ready to do that again|was just recently mined by someone else|Roundtime|area has already been tended to|work carefully at tending your wound|The spell pattern collapses|You are unable to control|not damaged enough to warrant repair|cannot figure out how to do that|You're not ready to do that|Drink what|What were you referring|You eat|You drink|You stand|Your analysis has revealed no additional resources|You look around, but can't see any place to hide yourself|stalking|following|already hidden|You pick up|You cannot|You gesture|You trace a hasty sigil in the air|is now set at|You detach|You snuff|You sling|You begin chanting|You bend|You are already|Quietly touching|You recite| turns up fruitless|You pour|You sprinkle|already stand|You grind|You feel warmth|already empty|You recall|You struggle|You open|You raise|You reach for its center and forge a magical link to it|You trace an angular sigil|cannot produce|You drop|already been skinned|before you arrange|inherently stealthy endeavor|try being out of sight|cannot muster enough energy to vocalize|cannot collect anything|Setting your|You trace a geometric sigil|don't have a spell prepared|already preparing|already fully prepared|preparing a spell|harnessing any mana|You aren't preparing|You slip|no matter how you arrange it|There isn't any more room|With meditative movements|You draw out your|You sheath|You are already holding|You're already holding|But you're already|preparing a spell)
+     matchre verb.d (skin briefly withers and tightens|fluid and stealthy movements|lick the tip of your finger and trace|Having no further use|You focus on infusing|You secure|You focus on manipulating|You lack the necessary|You release an accompaniment|The first gentle notes|You let your voice fade|You begin to chant a mesmerizing|With a rising crescendo in your voice|You begin your enchante|The air gradually stills|With a sharp cut to your voice|A few fleeting|You begin to hum the soothing|marches off and become gradually quieter|With a resounding|As your rendition of|You release an accompaniment|You begin to sing|flick of your wrist you stealthily unsheathe|Praying for|eyes darken to black as a starless night|release an accompaniment of elemental air|begin to chant a mesmerizing cadence designed|into your bundle|You release an accompaniment of elemental fire|you begin to chant the rhythm that heralds|trace a careful sigil|You raise your arms skyward|mutter a foul-sounding phrase to yourself|trace a curving sigil|that is already in your inventory|determine anything about this creature|mutter blasphemies to yourself|already dead|mutter incoherently to yourself while preparing|wailing of lost souls accompanies|has already been arranged|blue frost crackles up your arms|you can't arrange|Your heart skips a beat|newfound fluidity of your mind|orange flames blaze between your fingertips|You deftly|You strap|You stuff|With calm movements|You attach|You remove|You can also|Smiling slyly|not ready|You clench your hands|You hold out your arms to either side as|You fade in|You whisper the final word of your spell so that none may notice your effort|too cluttered|Stalk what|You clap|You speak|Arrange what|With rigid movements|You close yours eyes|With tense movements|You let your concentration|You make a holy gesture|cannot be skinned|You find yourself unable to hunt|could not find what|You clap your hands|You easily strap|That area is not bleeding|You take a step back|could not find what|You strain, but cannot focus your mind|You attempt to relax your mind|You get|You put|STOW HELP|You push|think pushing that would have any effect|You move|You're already using the Sight|You have not recovered from your previous use|careful focus, you adjust your eyes to see in shadow as they|You close your eyes|You're not ready to do that again|was just recently mined by someone else|Roundtime|area has already been tended to|work carefully at tending your wound|The spell pattern collapses|You are unable to control|not damaged enough to warrant repair|cannot figure out how to do that|You're not ready to do that|Drink what|What were you referring|You eat|You drink|You stand|Your analysis has revealed no additional resources|You look around, but can't see any place to hide yourself|stalking|following|already hidden|You pick up|You cannot|You gesture|You trace a hasty sigil in the air|is now set at|You detach|You snuff|You sling|You begin chanting|You bend|You are already|Quietly touching|You recite| turns up fruitless|You pour|You sprinkle|already stand|You grind|You feel warmth|already empty|You recall|You struggle|You open|You raise|You reach for its center and forge a magical link to it|You trace an angular sigil|cannot produce|You drop|already been skinned|before you arrange|inherently stealthy endeavor|try being out of sight|cannot muster enough energy to vocalize|cannot collect anything|Setting your|You trace a geometric sigil|don't have a spell prepared|already preparing|already fully prepared|preparing a spell|harnessing any mana|You aren't preparing|You slip|no matter how you arrange it|There isn't any more room|With meditative movements|You draw out your|You sheath|You are already holding|You're already holding)
      matchwait
 verb.d:
      return
- 
+
 skin.p:
      pause 0.5
 skin:
@@ -1444,7 +1390,7 @@ skin.d:
      if "%whichhand" = "right" then if "$righthand" != "Empty" then var temp1 empty right
      if "%temp1" != "nil" then gosub verb %temp1
      return
- 
+
      if matchre("$roomobjs","bundle") then if "%attack" = "throw" then put put $righthandnoun in bundle
      if matchre("$roomobjs","bundle") then if "%attack" = "offhand" then put put $righthandnoun in bundle
      if matchre("$roomobjs","bundle") then if "%skill" = "brawl" then put put $righthandnoun in bundle
@@ -1487,12 +1433,12 @@ loot.d:
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      if matchre("$roomobjs","midnight black arrow") then gosub verb stow mid arrow
      return
- 
+
 lootgem:
      if "%lootgems" != "on" then return
-     if matchre("$roomobjs","%gems") then gosub verb stow gem
-     if matchre("$roomobjs","%gems") then gosub verb stow gem
-     if matchre("$roomobjs","%gems") then gosub verb stow gem
+     if matchre("$roomobjs","%gems") then gosub verb stow $0
+     if matchre("$roomobjs","%gems") then gosub verb stow $0
+     if matchre("$roomobjs","%gems") then gosub verb stow $0
      return
 lootcoin:
      if "%lootcoins" != "on" then return
@@ -1511,7 +1457,7 @@ lootbox:
      pause 0.1
      if "$righthand" != "Empty" then if "$lefthand" != "Empty" then put drop %tempbox
      return
- 
+
 pickup-box.p:
      pause 0.5
 pickup-box:
@@ -1530,7 +1476,7 @@ stow-box:
 put stow my %tempbox
      matchre stow-box.p (type ahead|...wait)
      matchre stow-box.d (You put|could not find|What were you)
-     matchre stow-box.d (how you arrange|t to fit|more room|more space|too heavy)
+     matchre swap-box-stow (how you arrange|t to fit|more room|more space|too heavy)
      matchwait
 stow-box.d:
      return
@@ -1539,9 +1485,9 @@ swap-box-stow:
      if %BoxStowTrack = %HolderCount then return
      eval CurrentStorage element("%box-holders", %BoxStowTrack)
      goto stow-box
- 
- 
- 
+
+
+
 retreat.p:
      pause 0.5
 retreat:
@@ -1555,7 +1501,7 @@ put retreat
      matchwait
 retreat.d:
      return
- 
+
 timer:
      timer clear
      timer reset
@@ -1573,12 +1519,12 @@ attack.w:
      if $monstercount > 0 then goto %attack
      if $monstercount = 0 then put exp
      goto attack.w
- 
+
 mana-wait:
      pause 5
      if $mana > %internal-attunement then return
      goto mana-wait
- 
+
 spell-buffs:
      if "%guild" = "Barbarian" then return
      if "%guild" = "Thief" then return
@@ -1605,8 +1551,8 @@ spell-buffs:
      if $gametime > %buff-dur-10 then var buffcamb %buff-camb-10
      if $gametime > %buff-dur-10 then gosub prep-buff %buff-spell-10
      return
- 
- 
+
+
 prep-buff:
      var buffer $0
      gosub setspell %buffer
@@ -1645,8 +1591,8 @@ cast-buff:
 setspell:
      var spellname $1
 return
- 
- 
+
+
 set-dur.p:
      pause 0.5
 set-dur:
@@ -1672,7 +1618,7 @@ setspelldur3:
 setspelldur4:
      var ts $1$2-$3
      goto convertduration
- 
+
 convertduration:
      eval ts replacere("%ts", "hundred and", "1")
      eval ts replacere("%ts", "hundred", "1")
@@ -1735,10 +1681,10 @@ ts-end:
      if "%buffer" = "%buff-spell-10" then var buff-dur-10 %ts
      echo [ Setting %buffer timer to %ts
      return
- 
+
      
- 
- 
+
+
 cyclictimer:
      if "%cyclics" = "off" then return
      if %cyclictrack > 3 then var cyclictrack 0
@@ -1770,7 +1716,7 @@ put rel cyc
 skip-sls:
      math cyclictrack add 1
      return
- 
+
 repairs:
      var returnroom $roomid
      gosub move %RepairRoom
@@ -1790,7 +1736,7 @@ leatherrepdone:
      gosub move %returnroom
      goto swap-skills
      
- 
+
 repleath:
      gosub verb remove my %NextRep
      gosub verb get my needles
@@ -1801,7 +1747,7 @@ repleath:
      gosub verb stow my slickstone
      gosub verb wear my %NextRep
      return
- 
+
 roars:
      if "%barb-roars" = "off" then return
      if "%guild" != "Barbarian" then return
@@ -1824,7 +1770,7 @@ forms2:
      pause 0.5
      if matchre("%NextSkill","%weapons") then gosub check-form $0
      return
- 
+
 check-form:
      var form-array %$1-forms
      if "%form-array" = "off" then return
@@ -1843,7 +1789,7 @@ secondary-forms:
      gosub start-form %form-array
 forms-done:
      return
- 
+
 start-form:
      var form $0
      if "%form" = "off" then return
@@ -1856,7 +1802,7 @@ put form start %form
 set-attacklimit:
      if matchre("%NextSkill","%weapons") then var attack-limit %$0-attack-limit
      return
- 
+
 thief-khri:
      if "%thief-khri" = "off" then return
      if "%kneel-for-khris" = "on" then put kneel
@@ -1867,12 +1813,12 @@ thief-khri:
      if "%khri" = "off" then return
      if "%khri" = "none" then return
      if "%khri" != "%oldkhri" then put khri stop
-     pause 1
+     pause 0.2
 put khri start %khri
      pause 2
      if "%kneel-for-khris" = "on" then gosub verb stand
      return
- 
+
 necro-ritual.p:
      pause 0.5
 necro-rituals:
@@ -1911,7 +1857,7 @@ ritual.d:
      if "$righthandnoun" = "material" then put empty right
      if "$lefthandnoun" = "material" then put empty left
      pause 0.1
- 
+
      var tverb nil
      if "%skill" = "brawl" then if "$righthand" != "Empty" then var tverb stow right
      if "%skill" = "targeted magic" then if "$righthand" != "Empty" then var tverb stow right
@@ -1924,8 +1870,8 @@ ritual.d:
      if "%skill" = "targeted magic" then if "$righthand" != "Empty" then put stow right
      if "%skill" != "brawl" then if "%skill" != "targeted magic" then if "$lefthand" != "Empty" then put stow left
      return
- 
- 
+
+
 necro-arise:
      pause 0.5
 put perform preserve on %crittername
@@ -1940,7 +1886,7 @@ put perform arise on %crittername
      matchre ritual.d (but are unable to discern where to direct your thanatological|A failed or completed|This corpse has already|may only be performed on a corpse|may only be performed on a creature's corpse|do not work upon the undead)
      match ritual-harvest Roundtime
      matchwait
- 
+
 necro-selfheal.p:
      pause 0.5
 necro-selfheal:
@@ -1958,7 +1904,7 @@ perform-necroheal:
 put cast %bodypart;release spell
      pause
      return
- 
+
 bard-screams:
      if "%bard-screams" = "off" then return
      if "%bard-screams" = "none" then return
@@ -1966,7 +1912,7 @@ bard-screams:
      gosub set-scream %NextSkill
      if "%scream" = "none" then return
      if "%scream" = "off" then return
-     var scream-timer $gametime    
+     var scream-timer $gametime     
      math scream-timer add 90
      pause 0.5
 put %scream
@@ -1975,11 +1921,11 @@ put %scream
      var scream-timer $gametime
      math scream-timer add 60
      return
- 
+
 set-scream:
      var scream %$1-scream
      return
- 
+
      
 wm-pathway:
      var pathtrack 0
@@ -1999,13 +1945,13 @@ summon-adm.done:
      gosub verb pathway focus %wm-pathway
      gosub verb stand
      return
- 
- 
- 
+
+
+
 module:
      gosub check-mods-cycle
      goto swap-skills
- 
+
 check-mods-skin:
      if "%modules" != "on" then return
      if matchre("%skinmods","%module-1-timing") then if "%module-1-name" != "none" then if "%module-1-name" != "off" then gosub runmodule %module-1-name
@@ -2045,7 +1991,7 @@ checkmodtimer:
      if %currenttime > %starttime then gosub runmodule %tempname
      if %currenttime > %starttime then var starttime $gametime
      return
- 
+
 runmodule:
      var modulename $0
      echo . [ Running module %modulename ... ]
@@ -2053,7 +1999,7 @@ put .%modulename
       waitforre (SCRIPT DONE|SCRIPT COMPLETE|MOD DONE|MODULE DONE|MOD COMPLETE|MOD FINISHED|SCRIPT FINISHED|MODULE COMPLETE|MODULE FINISHED)
       pause 0.5
       return
-     
+      
 set-exptracker:
      var LOCKEDUP 0
      if %exp-limit > 33 then var exp-limit 33
@@ -2074,8 +2020,8 @@ set-exptracker:
      if "%skill" = "brawl" then if $Brawling.LearningRate > %exp-limit then var LOCKEDUP 1
      if "%skill" = "targeted magic" then if $Targeted_Magic.LearningRate > %exp-limit then var LOCKEDUP 1
      return      
- 
- 
+
+
 script-end:
      echo
      echo Time Out!

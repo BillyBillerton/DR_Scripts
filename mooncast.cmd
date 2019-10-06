@@ -2,15 +2,15 @@ var dayconst sun
 var nightconst magpie
 var time 0
 var aug_spellname shadows
-var augmana 15
+var augmana 30
 var ward_spellname maf
 var wardmana 30
 var util_spellname pg
 var utilmana 30
 var shadowlingtimer 4500
 var observetimer 300
-var origami mask
-var origamion yes
+var origami horse
+var origamion no
 
 if_1 then var collectable %1
 
@@ -268,25 +268,26 @@ waitlist:
 			pause 1
 			put stow right
 			pause 1
-			put get my compen
+			put get my encyc
+			put turn encyc to sluagh
 			pause 1
 
 		readcompen:
 			match turncompen Why do you need
 			match turncompen With a sudden moment
-			put study compen
+			put study encyc
 			matchwait 5
 			goto readcompen
 		
 		turncompen:
 			math compencount add 1
-			if %compencount > 4 then 
+			if %compencount > 6 then 
 			{
-				put stow my compen
+				put stow my encyc
 				pause 1
 				goto main
 			}
-			put turn compen
+			put turn encyc
 			pause 1
 			goto readcompen
 			

@@ -1,0 +1,324 @@
+var ignoreList sharkskin|green kelp|jadice flower|hisan flower|brown kelp|cambrinth earcuff|cambrinth armband|rockweed|cebi root|yelith root|burlap cloth|linen cloth|cotton cloth|silk cloth|wool cloth|goblin-bone stack|bobcat-bone stack|gargoyle-hide leather|dolomite deed|limestone deed|alabaster deed|andesite deed|serpentine deed|kobold-bone stack|sluagh-bone stack|cambrinth snake|burlap cloth|felt hat|gray hat|ankle boots|cambrinth cobra|acolyte's alb|bodice dagger|silk shirt|white silk surcoat|black silk surcoat|woolen cap|trollkin-hide leather|blood wolf pelt leather|shalswar hide leather|silk sash|silk shirt|silk blouse|white trousers|sky-blue pants|sky-blue sundress|steel dagger|lemon-yellow pant|preserved hardtack|wool breeches|cambrinth anklet|powder|cambrinth viper|suede pants|stone pipe|clay whistle|bloodgrog|amber trouser|silk headscarf|twisted cambrinth ring|silk ascot|wool pants|cigar|stone pipe|felt jacket|black-hide leather|green-scale leather|desumos-bone stack|carcal-pelt leather|silver-leucro leather|ocarina|blackened-bone stack|marble-hide leather|steel-bladed carving|tobacco|reaver-bone stack|sable pants|steel-bladed carving|serpent-bone|damask ascot|deer-bone stack|steel bar|amber-scale leather|huntman's axe|spiked axe|silk skullcap|wooden nectarine|peach cloak|twisted cambrinth ring|lavender shirt
+
+	#When first bag is full, it will go in second bag
+var firstContainer Haversack
+var secondContainer Backpack
+
+
+
+##################################################################################
+###############			SCRIPT SECION! DO NOT EDIT			######################
+#################################################################################
+
+action goto FullBag when isn't any more room
+action var droppedItem $1 when Your (.*) falls to the ground.
+var BoxRoomId $roomid
+var HealRoomId 34
+var healer Cappiam
+var currentContainer %firstContainer
+var droppedItem none
+goto loop
+
+drop:
+if $righthand != Empty then send empty right
+if $lefthand != Empty then send empty left
+pause 0.5
+
+loop:
+send play darkbox
+match wounds Unfortunately, your wounds
+match Success And you find something!
+match loop Roundtime
+match wounds Unfortunately, your wounds make it impossible for you to play the Darkbox.
+matchre moved Play on what instrument?|What type of song|You should be holding|You cannot play
+matchwait
+
+Success:
+pause 0.5
+if %droppedItem != none then
+{
+	send get %droppedItem
+	waitforre You pick up|What were you|You can't pick that up|Please rephrase that command|spills and dissipates|is not yours
+	var droppedItem none
+}
+if matchre("$righthand", "pouch") or matchre("$lefthand", "pouch") then
+{
+	put open my pouch
+	waitforre You open|already open
+	put get my ticket
+	waitforre You pick|What were you
+	send put my pouch in bin
+	match loop You drop
+	match drop What were you
+	matchwait
+}
+if matchre("$righthand", "%ignoreList") then
+{
+	send put my $righthandnoun in bin
+	match loop You drop
+	match drop What were you
+	matchwait
+}
+
+if matchre("$lefthand", "%ignoreList") then
+{
+	send put my $lefthandnoun in bin
+	match loop You drop
+	match drop What were you
+	matchwait
+}
+if $righthand != Empty then
+{
+	send put my $righthandnoun in my %currentContainer
+	waitforre You put|What were you
+}
+if $lefthand != Empty then 
+{
+	send put my $lefthandnoun in my %currentContainer
+	waitforre You put|What were you
+}
+goto loop
+
+FullBag:
+if %currentContainer = %firstContainer then if %secondContainer != none then
+{
+	var currentContainer %secondContainer
+	goto Success
+}
+put #beep
+pause 0.2
+put #beep
+pause 0.2
+put #beep
+put #flash
+if %secondContainer = none then
+{
+	echo ##########################################################################################
+	echo #######	YOUR %firstContainer IS FULL AND THERE IS NO SECOND CONTAINER SET!!!	#######
+	echo ##########################################################################################
+	exit
+}
+
+echo ##########################################################################################
+echo #######						BOTH OF YOUR CONTAINERS ARE FULL!					#######
+echo ##########################################################################################
+exit
+
+wounds:
+
+send #goto %HealRoomId
+waitfor YOU HAVE ARRIVED
+
+tap:
+send whisper peri heal
+waitHealth:
+match Checkhealth feel fully healed
+matchwait 45
+send health
+send enc
+match tap Encumbrance
+match GiveTooth no significant injuries.
+matchwait
+
+CheckHealth:
+send health
+send enc
+match waitHealth Encumbrance
+match GiveTooth no significant injuries.
+matchwait
+
+
+GiveTooth:
+goto getcoin
+send get my tooth
+send give workman
+match GiveTooth Another tooth!
+matchre GetCoin What is it|What are you trying to give
+matchwait
+
+GetCoin:
+send get my coin
+match GetCoin You pick up
+match GoBack What were you
+matchwait
+
+GoBack:
+send 1 #goto %BoxRoomId
+waitfor YOU HAVE ARRIVED
+goto loop
+
+moved:
+send #goto sternum
+waitfor YOU HAVE ARRIVED
+send enc
+waitfor Encumbrance
+gosub move s
+gosub move e
+gosub move se
+gosub move s
+gosub move s
+gosub move sw
+gosub move sw
+gosub move n
+gosub move n
+gosub move n
+gosub move n
+gosub move n
+gosub move e
+gosub move s
+gosub move s
+gosub move s
+gosub move w
+gosub move w
+gosub move n
+gosub move n
+gosub move n
+gosub move sw
+gosub move s
+gosub move s
+gosub move se
+gosub move nw
+gosub move n
+gosub move go metallic arch
+gosub move w
+gosub move w
+gosub move go metallic arch
+gosub move se
+gosub move w
+gosub move w
+gosub move ne
+gosub move go access hatch
+gosub move ne
+gosub move w
+gosub move w
+gosub move ne
+gosub move go iron hatch
+gosub move ne
+gosub move n
+gosub move n
+gosub move nw
+gosub move s
+gosub move nw
+gosub move s
+gosub move s
+gosub move se
+gosub move go iron hatch
+gosub move s
+gosub move climb ladder
+gosub move se
+gosub move ne
+gosub move nw
+gosub move nw
+gosub move go bronze hatch
+gosub move ne
+gosub move n
+gosub move n
+gosub move n
+gosub move nw
+gosub move sw
+gosub move s
+gosub move s
+gosub move s
+gosub move se
+gosub move n
+gosub move n
+gosub move n
+gosub move n
+gosub move s
+gosub move s
+gosub move s
+gosub move s
+gosub move go access hatch
+gosub move sw
+gosub move sw
+gosub move se
+gosub move se
+gosub move go valve;stand
+gosub move sw
+gosub move go valve;stand
+gosub move sw
+gosub move ne
+gosub move se
+gosub move nw
+gosub move n
+gosub move n
+gosub move sw
+gosub move sw
+gosub move sw
+gosub move ne
+gosub move w
+gosub move e
+gosub move ne
+gosub move ne
+gosub move w
+gosub move w
+gosub move nw
+gosub move se
+gosub move sw
+gosub move ne
+gosub move e
+gosub move e
+gosub move nw
+gosub move nw
+gosub move nw
+gosub move se
+gosub move w
+gosub move e
+gosub move se
+gosub move se
+gosub move n
+gosub move n
+gosub move nw
+gosub move se
+gosub move ne
+gosub move sw
+gosub move s
+gosub move s
+gosub move ne
+gosub move ne
+gosub move ne
+gosub move sw
+gosub move e
+gosub move w
+gosub move sw
+gosub move sw
+gosub move e
+gosub move e
+gosub move ne
+gosub move sw
+gosub move se
+gosub move nw
+gosub move w
+gosub move w
+gosub move se
+gosub move se
+gosub move se
+gosub move nw
+gosub move e
+
+echo ##################################################################################################
+echo ##################################################################################################
+echo ##################################################################################################
+echo #####################################CANNOT FIND DARKBOX!!!!######################################
+echo ##################################################################################################
+echo ##################################################################################################
+echo ##################################################################################################
+put #beep
+pause 0.2
+put #beep
+pause 0.2
+put #beep
+put #flash
+exit
+
+move:
+send $0
+waitfor Obvious
+if matchre("$roomobjs","Darkbox") then goto RemoveGosub
+return
+
+
+RemoveGosub:
+gosub clear
+var BoxRoomId $roomid
+goto loop
