@@ -112,6 +112,7 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
+<<<<<<< HEAD
      var smalledge-stance 100 40 47 100
      var largeedge-stance 100 40 47 100
      var twohandededge-stance 100 40 47 100
@@ -128,6 +129,24 @@
      var offhand-stance 100 4 80 100
      var brawl-stance 100 40 47 100
      var TM-stance 100 40 47 100
+=======
+     var smalledge-stance 100 40 40 100
+     var largeedge-stance 100 40 40 100
+     var twohandededge-stance 100 40 40 100
+     var smallblunt-stance 100 40 40 100
+     var largeblunt-stance 100 40 40 100
+     var twohandedblunt-stance 100 40 40 100
+     var staves-stance 100 40 40 100
+     var polearm-stance 100 40 40 100
+     var crossbow-stance 100 4 80 100
+     var bow-stance 100 4 80 100
+     var slings-stance 100 4 80 100
+     var lightthrown-stance 100 40 40 100
+     var heavythrown-stance 100 40 40 100
+     var offhand-stance 100 4 80 100
+     var brawl-stance 100 40 40 100
+     var TM-stance 100 40 40 100
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
 
 #% WARMAGE SUMMONING
      var wm-align air

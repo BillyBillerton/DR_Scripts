@@ -63,7 +63,11 @@
      var alwayshideFORranged off
  
      var targetmagic on
+<<<<<<< HEAD
      var TM-spell-1 bos 5
+=======
+     var TM-spell-1 bos 2
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var TM-spell-2 none
      var TM-spell-3 none
      var TM-weapon none
@@ -86,7 +90,11 @@
      var smalledge-attack-limit 60
      var largeedge-attack-limit 60
      var twohandededge-attack-limit 60
+<<<<<<< HEAD
      var smallblunt-attack-limit 60
+=======
+     var smallblunt-attack-limit 30
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var largeblunt-attack-limit 30
      var twohandedblunt-attack-limit 30
      var staves-attack-limit 60
@@ -104,7 +112,11 @@
 #% LOOT
      var lootgems on
      var lootcoins on
+<<<<<<< HEAD
      var lootboxes off
+=======
+     var lootboxes on
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
 
      var box-holders rugu|tote
      var box-limit 9999
@@ -235,7 +247,11 @@
 
 
 #% SPELL BUFFS
+<<<<<<< HEAD
      var buff-spell-1 mis 10
+=======
+     var buff-spell-1 aewo 2
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var buff-camb-1 none
      var buff-spell-2 none
      var buff-camb-2 none
@@ -258,8 +274,13 @@
      var minimum-attunement 10
      var camb-item none
 
+<<<<<<< HEAD
      var cyclics on
      var cyclic-1 aewo 2
+=======
+     var cyclics off
+     var cyclic-1 none
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var cyclic-1-cast none
      var cyclic-2 none
      var cyclic-2-cast none

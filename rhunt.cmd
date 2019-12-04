@@ -22,7 +22,11 @@
 
      var smalledge thrusting.blade
      var largeedge battle.axe
+<<<<<<< HEAD
      var twohandededge flamberge
+=======
+     var twohandededge marauder.blade
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var edge-maneuver none
      var smallblunt none
      var largeblunt none
@@ -34,7 +38,15 @@
      var polearm-maneuver none
      var crossbow crossbow
      var crossbow-ammo bolt
+<<<<<<< HEAD
      var crossbow-shoot snipe
+=======
+<<<<<<< HEAD
+     var crossbow-shoot snipe
+=======
+     var crossbow-shoot poach
+>>>>>>> d359c2f3bedbb25bc6c2dd252a3fcba944d67820
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var crossbow-snapshots off
      var bow none
      var bow-ammo arrow
@@ -112,6 +124,7 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
+<<<<<<< HEAD
      var smalledge-stance 100 40 44 100
      var largeedge-stance 100 40 44 100
      var twohandededge-stance 100 40 44 100
@@ -127,6 +140,23 @@
      var heavythrown-stance 100 40 44 100
      var offhand-stance 100 40 44 100
      var brawl-stance 100 40 44 100
+=======
+     var smalledge-stance 100 4 80 100
+     var largeedge-stance 100 4 80 100
+     var twohandededge-stance 100 4 80 100
+     var smallblunt-stance 100 4 80 100
+     var largeblunt-stance 100 4 80 100
+     var twohandedblunt-stance 100 4 80 100
+     var staves-stance 100 4 80 100
+     var polearm-stance 100 4 80 100
+     var crossbow-stance 100 0 80 100
+     var bow-stance 100 0 80 100
+     var slings-stance 100 4 80 100
+     var lightthrown-stance 100 4 80 100
+     var heavythrown-stance 100 4 80 100
+     var offhand-stance 100 4 80 100
+     var brawl-stance 100 4 80 100
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var TM-stance 61 60 60 100
 
 #% WARMAGE SUMMONING
@@ -158,6 +188,10 @@
 #% THIEF KHRI
      var thief-khri on
      var kneel-for-khris on
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var smalledge-khri avoid dark damp prowess haste harrier
      var largeedge-khri avoid avoid dark damp prowess haste harrier
      var twohandededge-khri avoid dark damp prowess haste harrier
@@ -167,9 +201,29 @@
      var staves-khri none
      var polearm-khri none
      var crossbow-khri steady dark damp prowess avoid haste
+<<<<<<< HEAD
      var bow-khri none
      var slings-khri avoid dark damp prowess haste harrier
      var lightthrown-khri none
+=======
+     var bow-khri none
+     var slings-khri avoid dark damp prowess haste harrier
+     var lightthrown-khri none
+=======
+     var smalledge-khri avoid prowess haste dark damp
+     var largeedge-khri avoid prowess haste dark damp
+     var twohandededge-khri avoid prowess haste dark damp
+     var smallblunt-khri avoid prowess haste dark damp
+     var largeblunt-khri avoid prowess haste dark damp
+     var twohandedblunt-khri avoid prowess haste dark damp
+     var staves-khri avoid prowess haste dark damp
+     var polearm-khri avoid prowess haste dark damp
+     var crossbow-khri steady prowess avoid haste
+     var bow-khri none
+     var slings-khri none
+     var lightthrown-khri avoid prowess haste dark damp
+>>>>>>> d359c2f3bedbb25bc6c2dd252a3fcba944d67820
+>>>>>>> 8f0d62862b22234fd4415110a371145c1e36c722
      var heavythrown-khri none
      var offhand-khri none
      var brawl-khri strike dark damp avoid prowess
