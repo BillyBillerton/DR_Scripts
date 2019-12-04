@@ -20,40 +20,40 @@
 
 
 
-     var smalledge scimitar
-     var largeedge broadsword
-     var twohandededge warring.axe
+     var smalledge none
+     var largeedge none
+     var twohandededge none
      var edge-maneuver none
-     var smallblunt bola
-     var largeblunt hammer
-     var twohandedblunt mattock
+     var smallblunt none
+     var largeblunt mace
+     var twohandedblunt mace
      var blunt-maneuver none
-     var staves quarterstaff
+     var staves none
      var staves-maneuver none
-     var polearm fork
+     var polearm none
      var polearm-maneuver none
-     var crossbow crossbow
-     var crossbow-ammo bolt
-     var crossbow-shoot fire
-     var crossbow-snapshots off
-     var bow shortbow
-     var bow-ammo arrow
-     var bow-shoot fire
+     var crossbow none
+     var crossbow-ammo none
+     var crossbow-shoot none
+     var crossbow-snapshots none
+     var bow none
+     var bow-ammo none
+     var bow-shoot none
      var bow-snapshots off
-     var slings sling
-     var sling-ammo stone.shard
-     var sling-shoot fire
+     var slings none
+     var sling-ammo none
+     var sling-shoot none
      var sling-snapshots off
      var ranged-maneuver none
-     var lightthrown bola
+     var lightthrown none
      var lightthrown-attack throw
      var lightthrown-bond off
-     var heavythrown hammer
+     var heavythrown none
      var heavythrown-bond off
-     var heavythrown-attack throw
+     var heavythrown-attack none
      var thrown-maneuver none
-     var offhand bola
-     var offhand-type thrown
+     var offhand none
+     var offhand-type melee
      var offhand-bond off
      var brawl on
      var brawl-maneuver none
@@ -63,8 +63,8 @@
      var alwayshideFORranged off
  
      var targetmagic on
-     var TM-spell-1 do 20
-     var TM-spell-2 none
+     var TM-spell-1 horn 6
+     var TM-spell-2 ff 5
      var TM-spell-3 none
      var TM-weapon none
 
@@ -72,7 +72,7 @@
 #% Debil cast can be set to area, creature, a specific command like "malediction offense" or none for general debil casts.
 
      var debilitation on
-     var debil-spell mb 30
+     var debil-spell sick
      var debil-cast none
 
      var arrange-times 5
@@ -87,8 +87,8 @@
      var largeedge-attack-limit 60
      var twohandededge-attack-limit 60
      var smallblunt-attack-limit 30
-     var largeblunt-attack-limit 30
-     var twohandedblunt-attack-limit 30
+     var largeblunt-attack-limit 60
+     var twohandedblunt-attack-limit 60
      var staves-attack-limit 60
      var polearm-attack-limit 30
      var crossbow-attack-limit 30
@@ -106,28 +106,28 @@
      var lootcoins on
      var lootboxes off
 
-     var box-holders backpack|haversack
+     var box-holders sack
      var box-limit 9999
 
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 40 47 100
-     var largeedge-stance 100 40 47 100
-     var twohandededge-stance 100 40 47 100
-     var smallblunt-stance 100 40 47 100
-     var largeblunt-stance 100 40 47 100
-     var twohandedblunt-stance 100 40 47 100
-     var staves-stance 100 40 47 100
-     var polearm-stance 100 40 47 100
-     var crossbow-stance 100 4 80 100
-     var bow-stance 100 4 80 100
-     var slings-stance 100 4 80 100
-     var lightthrown-stance 100 40 47 100
-     var heavythrown-stance 100 40 47 100
-     var offhand-stance 100 4 80 100
-     var brawl-stance 100 40 47 100
-     var TM-stance 100 40 47 100
+     var smalledge-stance 100 40 40 100
+     var largeedge-stance 100 40 40 100
+     var twohandededge-stance 100 40 40 100
+     var smallblunt-stance 100 40 40 100
+     var largeblunt-stance 100 40 40 100
+     var twohandedblunt-stance 100 40 40 100
+     var staves-stance 100 40 40 100
+     var polearm-stance 100 40 40 100
+     var crossbow-stance 100 40 40 100
+     var bow-stance 100 0 80 100
+     var slings-stance 100 0 80 100
+     var lightthrown-stance 100 40 40 100
+     var heavythrown-stance 100 40 40 100
+     var offhand-stance 100 40 40 100
+     var brawl-stance 100 40 40 100
+     var TM-stance 100 40 40 100
 
 #% WARMAGE SUMMONING
      var wm-align air
@@ -136,8 +136,8 @@
 
      
 #% BARD SCREAMS & WHISTLES
-     var bard-screams on
-     var bard-defiance on
+     var bard-screams off
+     var bard-defiance off
      var smalledge-scream scream havoc
      var largeedge-scream scream concussive
      var twohandededge-scream whistle piercing
@@ -235,10 +235,10 @@
 
 
 #% SPELL BUFFS
-     var buff-spell-1 shadows
-     var buff-camb-1 armband
-     var buff-spell-2 seer
-     var buff-camb-2 armband
+     var buff-spell-1 center
+     var buff-camb-1 none
+     var buff-spell-2 mapp
+     var buff-camb-2 none
      var buff-spell-3 none
      var buff-camb-3 none
      var buff-spell-4 none
@@ -256,10 +256,10 @@
      var buff-spell-10 none
      var buff-camb-10 none
      var minimum-attunement 10
-     var camb-item armband
+     var camb-item none
 
      var cyclics off
-     var cyclic-1 bes 5
+     var cyclic-1 aewo 2
      var cyclic-1-cast none
      var cyclic-2 none
      var cyclic-2-cast none
@@ -281,13 +281,13 @@
 
 
 #% CONTAINERS
-     var sheath-1-name baldric
-     var sheath-1-weapons sling|scimitar|broadsword|shortbow|military.fork|warring.axe
+     var sheath-1-name scabb
+     var sheath-1-weapons mace
      var sheath-2-name none
      var sheath-2-weapons none
-     var sheath-3-name haversack
-     var sheath-3-weapons crossbow|bola|mattock
-     var worn-weapons quarterstaff
+     var sheath-3-name none
+     var sheath-3-weapons none
+     var worn-weapons shortbow
 
 
 
@@ -1409,7 +1409,7 @@ put %verb
      match verb.p still stunned
      match verb.p you don't feel like fighting
      match verb.p can't do that while entangled in a web
-     matchre verb.d (skin briefly withers and tightens|fluid and stealthy movements|lick the tip of your finger and trace|Having no further use|You focus on infusing|You secure|You focus on manipulating|You lack the necessary|You release an accompaniment|The first gentle notes|You let your voice fade|You begin to chant a mesmerizing|With a rising crescendo in your voice|You begin your enchante|The air gradually stills|With a sharp cut to your voice|A few fleeting|You begin to hum the soothing|marches off and become gradually quieter|With a resounding|As your rendition of|You release an accompaniment|You begin to sing|flick of your wrist you stealthily unsheathe|Praying for|eyes darken to black as a starless night|release an accompaniment of elemental air|begin to chant a mesmerizing cadence designed|into your bundle|You release an accompaniment of elemental fire|you begin to chant the rhythm that heralds|trace a careful sigil|You raise your arms skyward|mutter a foul-sounding phrase to yourself|trace a curving sigil|that is already in your inventory|determine anything about this creature|mutter blasphemies to yourself|already dead|mutter incoherently to yourself while preparing|wailing of lost souls accompanies|has already been arranged|blue frost crackles up your arms|you can't arrange|Your heart skips a beat|newfound fluidity of your mind|orange flames blaze between your fingertips|You deftly|You strap|You stuff|With calm movements|You attach|You remove|You can also|Smiling slyly|not ready|You clench your hands|You hold out your arms to either side as|You fade in|You whisper the final word of your spell so that none may notice your effort|too cluttered|Stalk what|You clap|You speak|Arrange what|With rigid movements|You close yours eyes|With tense movements|You let your concentration|You make a holy gesture|cannot be skinned|You find yourself unable to hunt|could not find what|You clap your hands|You easily strap|That area is not bleeding|You take a step back|could not find what|You strain, but cannot focus your mind|You attempt to relax your mind|You get|You put|STOW HELP|You push|think pushing that would have any effect|You move|You're already using the Sight|You have not recovered from your previous use|careful focus, you adjust your eyes to see in shadow as they|You close your eyes|You're not ready to do that again|was just recently mined by someone else|Roundtime|area has already been tended to|work carefully at tending your wound|The spell pattern collapses|You are unable to control|not damaged enough to warrant repair|cannot figure out how to do that|You're not ready to do that|Drink what|What were you referring|You eat|You drink|You stand|Your analysis has revealed no additional resources|You look around, but can't see any place to hide yourself|stalking|following|already hidden|You pick up|You cannot|You gesture|You trace a hasty sigil in the air|is now set at|You detach|You snuff|You sling|You begin chanting|You bend|You are already|Quietly touching|You recite| turns up fruitless|You pour|You sprinkle|already stand|You grind|You feel warmth|already empty|You recall|You struggle|You open|You raise|You reach for its center and forge a magical link to it|You trace an angular sigil|cannot produce|You drop|already been skinned|before you arrange|inherently stealthy endeavor|try being out of sight|cannot muster enough energy to vocalize|cannot collect anything|Setting your|You trace a geometric sigil|don't have a spell prepared|already preparing|already fully prepared|preparing a spell|harnessing any mana|You aren't preparing|You slip|no matter how you arrange it|There isn't any more room|With meditative movements|You draw out your|You sheath|You are already holding|You're already holding|But you're already|preparing a spell)
+     matchre verb.d (skin briefly withers and tightens|fluid and stealthy movements|lick the tip of your finger and trace|Having no further use|You focus on infusing|You secure|You focus on manipulating|You lack the necessary|You release an accompaniment|The first gentle notes|You let your voice fade|You begin to chant a mesmerizing|With a rising crescendo in your voice|You begin your enchante|The air gradually stills|With a sharp cut to your voice|A few fleeting|You begin to hum the soothing|marches off and become gradually quieter|With a resounding|As your rendition of|You release an accompaniment|You begin to sing|flick of your wrist you stealthily unsheathe|Praying for|eyes darken to black as a starless night|release an accompaniment of elemental air|begin to chant a mesmerizing cadence designed|into your bundle|You release an accompaniment of elemental fire|you begin to chant the rhythm that heralds|trace a careful sigil|You raise your arms skyward|mutter a foul-sounding phrase to yourself|trace a curving sigil|that is already in your inventory|determine anything about this creature|mutter blasphemies to yourself|already dead|mutter incoherently to yourself while preparing|wailing of lost souls accompanies|has already been arranged|blue frost crackles up your arms|you can't arrange|Your heart skips a beat|newfound fluidity of your mind|orange flames blaze between your fingertips|You deftly|You strap|You stuff|With calm movements|You attach|You remove|You can also|Smiling slyly|not ready|You clench your hands|You hold out your arms to either side as|You fade in|You whisper the final word of your spell so that none may notice your effort|too cluttered|Stalk what|You clap|You speak|Arrange what|With rigid movements|You close yours eyes|With tense movements|You let your concentration|You make a holy gesture|cannot be skinned|You find yourself unable to hunt|could not find what|You clap your hands|You easily strap|That area is not bleeding|You take a step back|could not find what|You strain, but cannot focus your mind|You attempt to relax your mind|You get|You put|STOW HELP|You push|think pushing that would have any effect|You move|You're already using the Sight|You have not recovered from your previous use|careful focus, you adjust your eyes to see in shadow as they|You close your eyes|You're not ready to do that again|was just recently mined by someone else|Roundtime|area has already been tended to|work carefully at tending your wound|The spell pattern collapses|You are unable to control|not damaged enough to warrant repair|cannot figure out how to do that|You're not ready to do that|Drink what|What were you referring|You eat|You drink|You stand|Your analysis has revealed no additional resources|You look around, but can't see any place to hide yourself|stalking|following|already hidden|You pick up|You cannot|You gesture|You trace a hasty sigil in the air|is now set at|You detach|You snuff|You sling|You begin chanting|You bend|You are already|Quietly touching|You recite| turns up fruitless|You pour|You sprinkle|already stand|You grind|You feel warmth|already empty|You recall|You struggle|You open|You raise|You reach for its center and forge a magical link to it|You trace an angular sigil|cannot produce|You drop|already been skinned|before you arrange|inherently stealthy endeavor|try being out of sight|cannot muster enough energy to vocalize|cannot collect anything|Setting your|You trace a geometric sigil|don't have a spell prepared|already preparing|already fully prepared|preparing a spell|harnessing any mana|You aren't preparing|You slip|no matter how you arrange it|There isn't any more room|With meditative movements|You draw out your|You sheath|You are already holding|You're already holding|But you're already|preparing a spell|Slow, rich tones form a somber introduction)
      matchwait
 verb.d:
      return
@@ -1770,7 +1770,7 @@ put rel cyc
 skip-sls:
      math cyclictrack add 1
      return
- 
+	  
 repairs:
      var returnroom $roomid
      gosub move %RepairRoom

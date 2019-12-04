@@ -21,8 +21,8 @@
 
 
      var smalledge thrusting.blade
-     var largeedge longsword
-     var twohandededge two-handed.sword
+     var largeedge battle.axe
+     var twohandededge flamberge
      var edge-maneuver none
      var smallblunt none
      var largeblunt none
@@ -34,7 +34,7 @@
      var polearm-maneuver none
      var crossbow crossbow
      var crossbow-ammo bolt
-     var crossbow-shoot fire
+     var crossbow-shoot snipe
      var crossbow-snapshots off
      var bow none
      var bow-ammo arrow
@@ -45,14 +45,14 @@
      var sling-shoot fire
      var sling-snapshots off
      var ranged-maneuver none
-     var lightthrown bola
+     var lightthrown cuska
      var lightthrown-attack throw
      var lightthrown-bond off
      var heavythrown none
      var heavythrown-bond off
      var heavythrown-attack throw
      var thrown-maneuver none
-     var offhand bola
+     var offhand cuska
      var offhand-type thrown
      var offhand-bond off
      var brawl on
@@ -112,21 +112,21 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 3 80 100
-     var largeedge-stance 100 3 80 100
-     var twohandededge-stance 100 3 80 100
-     var smallblunt-stance 100 3 80 100
-     var largeblunt-stance 100 3 80 100
-     var twohandedblunt-stance 100 3 80 100
-     var staves-stance 100 3 80 100
-     var polearm-stance 100 3 80 100
-     var crossbow-stance 100 0 80 100
+     var smalledge-stance 100 40 44 100
+     var largeedge-stance 100 40 44 100
+     var twohandededge-stance 100 40 44 100
+     var smallblunt-stance 100 40 44 100
+     var largeblunt-stance 100 40 44 100
+     var twohandedblunt-stance 100 40 44 100
+     var staves-stance 100 40 44 100
+     var polearm-stance 100 40 44 100
+     var crossbow-stance 100 0 81 100
      var bow-stance 100 0 80 100
-     var slings-stance 100 3 80 100
-     var lightthrown-stance 100 3 80 100
-     var heavythrown-stance 100 3 80 100
-     var offhand-stance 100 3 80 100
-     var brawl-stance 100 3 80 100
+     var slings-stance 100 4 80 100
+     var lightthrown-stance 100 40 44 100
+     var heavythrown-stance 100 40 44 100
+     var offhand-stance 100 40 44 100
+     var brawl-stance 100 40 44 100
      var TM-stance 61 60 60 100
 
 #% WARMAGE SUMMONING
@@ -158,21 +158,21 @@
 #% THIEF KHRI
      var thief-khri on
      var kneel-for-khris on
-     var smalledge-khri avoid prowess haste
-     var largeedge-khri avoid prowess haste
-     var twohandededge-khri none
+     var smalledge-khri avoid dark damp prowess haste harrier
+     var largeedge-khri avoid avoid dark damp prowess haste harrier
+     var twohandededge-khri avoid dark damp prowess haste harrier
      var smallblunt-khri none
      var largeblunt-khri none
      var twohandedblunt-khri none
      var staves-khri none
      var polearm-khri none
-     var crossbow-khri steady prowess avoid haste
+     var crossbow-khri steady dark damp prowess avoid haste
      var bow-khri none
-     var slings-khri none
+     var slings-khri avoid dark damp prowess haste harrier
      var lightthrown-khri none
      var heavythrown-khri none
      var offhand-khri none
-     var brawl-khri strike avoid prowess
+     var brawl-khri strike dark damp avoid prowess
 
 #% THIEF AMBUSH
      var thief-ambush on
@@ -282,12 +282,12 @@
 
 #% CONTAINERS
      var sheath-1-name baldric
-     var sheath-1-weapons thrusting.blade|nightstick|longsword|two-handed.sword
-     var sheath-2-name none
-     var sheath-2-weapons none
+     var sheath-1-weapons thrusting.blade|nightstick|marauder.blade
+     var sheath-2-name backpack
+     var sheath-2-weapons cuska|battle.axe
      var sheath-3-name haversack
-     var sheath-3-weapons crossbow|bola
-     var worn-weapons bardiche|bardiche
+     var sheath-3-weapons crossbow
+     var worn-weapons bow
 
 
 
@@ -1145,7 +1145,7 @@ fire:
      if "%skill" = "bow" then var firetype %bow-shoot
      if "%skill" = "crossbow" then var firetype %crossbow-shoot
      if "%skill" = "sling" then var firetype %sling-shoot
-     if "%firetype" = "snipe" then gosub ambuhshstalk
+     if "%firetype" = "snipe" then gosub ambushstalk
      if "%firetype" = "poach" then gosub ambushstalk
      if $standing = 0 then gosub verb stand
      var stalkit 0

@@ -16,7 +16,7 @@ waitfor Overall state of mind
 if ($Locksmithing.Ranks >= 15) then
 {
 #	action var mode blind 
-	if $charactername = 'sulli' then var mode = careful
+	if $charactername = 'Loukno' then var mode = careful
 	if $charactername = 'akroun' then var mode = careful
 	action var mode careful when some chance of being able|with persistence you believe you could|would be a longshot|minimal chance|You really don't have any chance|The odd are against
 	action var mode quick when is a trivially constructed|will be a simple matter for you to|should not take long with #your skills|when you could do it blindfolded!|
