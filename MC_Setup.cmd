@@ -1,5 +1,5 @@
 if "$charactername" = "Vawgars" then goto CHARACTER1
-#if "$charactername" = "Dasbarb" then goto CHARACTER2
+if "$charactername" = "Eireen" then goto CHARACTER2
 #if "$charactername" = "Rishlu" then goto CHARACTER3
 #if "$charactername" = "Gator" then goto CHARACTER4
 #if "$charactername" = "Aerog" then goto CHARACTER5
@@ -104,7 +104,7 @@ put #var MC_Enchanting_NOWO 0
 #	MC_MAX.ORDER: Maximum number of items to craft, will get a new work order if above this number
 # 	MC_MIN.ORDER: Minimum number of items to craft, will get a new work order if below this number
 put #var MC_REPAIR on
-put #var MC_AUTO.REPAIR on
+put #var MC_AUTO.REPAIR off
 put #var MC_GET.COIN on
 put #var MC_REORDER on
 put #var MC.Mark off
@@ -213,11 +213,11 @@ put #var MC_Engineering_NOWO 0
 #	MC_OUT.PREF: Material type noun i.e. yarn, cloth, leather
 #	MC_OUT.DIFFICULTY: Order difficulty easy, challenging, hard
 #	MC_OUT.DEED: DEED orders instead of bundling items on or off
-put #var MC_OUTFITTING.STORAGE satchel
+put #var MC_OUTFITTING.STORAGE black.sack
 put #var MC_OUT.DISCIPLINE tailor
 put #var MC_OUT.MATERIAL wool
 put #var MC_OUT.PREF cloth
-put #var MC_OUT.DIFFICULTY hard
+put #var MC_OUT.DIFFICULTY easy
 put #var MC_OUT.DEED off
 put #var MC_Outfitting_NOWO 0
 #######################################################################
@@ -266,7 +266,7 @@ put #var MC_Enchanting_NOWO 0
 #	MC_MAX.ORDER: Maximum number of items to craft, will get a new work order if above this number
 # 	MC_MIN.ORDER: Minimum number of items to craft, will get a new work order if below this number
 put #var MC_REPAIR on
-put #var MC_AUTO.REPAIR on
+put #var MC_AUTO.REPAIR off
 put #var MC_GET.COIN on
 put #var MC_REORDER on
 put #var MC.Mark off
@@ -309,12 +309,12 @@ put #var MC_TOOLBELT_Engineering NULL
 put #var MC_TOOL.STORAGE_Engineering shoulder pack
 #OUTFITTING
 put #var MC_NEEDLES sewing needles
-put #var MC_SCISSORS ka'hurst scissors
+put #var MC_SCISSORS scissors
 put #var MC_SLICKSTONE slickstone
 put #var MC_YARDSTICK silversteel yardstick
 put #var MC_AWL uthamar awl
 put #var MC_TOOLBELT_Outfitting NULL
-put #var MC_TOOL.STORAGE_Outfitting shoulder pack
+put #var MC_TOOL.STORAGE_Outfitting tailor.kit
 #ALCHEMY
 put #var MC_BOWL alabaster bowl
 put #var MC_MORTAR stone mortar
