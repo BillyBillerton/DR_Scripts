@@ -147,7 +147,7 @@ put #var MC_TOOLBELT_Engineering NULL
 put #var MC_TOOL.STORAGE_Engineering pack
 #OUTFITTING
 put #var MC_NEEDLES sewing needles
-put #var MC_SCISSORS scissors
+put #var MC_SCISSORS steel scissors
 put #var MC_SLICKSTONE slickstone
 put #var MC_YARDSTICK yardstick
 put #var MC_AWL NULL
@@ -523,9 +523,9 @@ put #var MC_Forging_NOWO 0
 #	MC_ENG.DIFFICULTY: Order difficulty easy, challenging, hard
 #	MC_ENG.DEED: DEED orders instead of bundling items on or off
 put #var MC_ENGINEERING.STORAGE haversack
-put #var MC_ENG.DISCIPLINE tinkering
-put #var MC_ENG.MATERIAL pine
-put #var MC_ENG.PREF lumber
+put #var MC_ENG.DISCIPLINE carving
+put #var MC_ENG.MATERIAL wolf
+put #var MC_ENG.PREF bone
 put #var MC_ENG.DIFFICULTY challenging
 put #var MC_ENG.DEED off
 put #var MC_Engineering_NOWO 0
@@ -599,7 +599,7 @@ put #var MC.Mark off
 put #var MC_BLACKLIST none
 put #var MC_WORK.OUTSIDE 0
 #put #var MC_PREFERRED.ROOM 
-#put #var MC_FRIENDLIST
+#put #var MC_FRIENDLIST Dreamheart
 put #var MC_NOWO 0
 put #var MC_END.EARLY 0
 put #var MC_MAX.ORDER 3
@@ -624,7 +624,7 @@ put #var MC_TOOLBELT_Forging NULL
 put #var MC_TOOL.STORAGE_Forging satchel
 #ENGINEERING
 put #var MC_CHISEL sharpened chisel
-put #var MC_SAW serrated saw
+put #var MC_SAW bone saw
 put #var MC_RASP tapered rasp
 put #var MC_RIFFLER elongated riffler
 put #var MC_TINKERTOOL tools

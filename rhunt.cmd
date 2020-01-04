@@ -157,7 +157,7 @@
 
 #% THIEF KHRI
      var thief-khri on
-     var kneel-for-khris on
+     var kneel-for-khris off
      var smalledge-khri avoid dark damp prowess haste harrier
      var largeedge-khri avoid avoid dark damp prowess haste harrier
      var twohandededge-khri avoid dark damp prowess haste harrier

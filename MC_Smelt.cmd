@@ -1,5 +1,5 @@
 #Metal Smelting
-debug 10
+#debug 10
 if_1 goto Continue
 echo Usage is: .smelt <material>
 echo To smelt more than one material separate them by a space .smelt <material> <material>
