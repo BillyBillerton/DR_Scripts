@@ -670,7 +670,7 @@ calc.material:
                var herb2 NULL
                var herb1.volume 5
                if %order.chapter = 2 then var herb2.volume 1
-               if matchre("%full.order.noun", "some blister cream|some moisturizing ointment|some itch salve|some lip balm") then var herb1 red.flowers
+               if matchre("%full.order.noun", "some blister cream|some moisturizing ointment|some itch salve|some lip balm") then var herb1 flower
                if "%full.order.noun" = "some blister cream" then var herb2 nemoih
                if "%full.order.noun" = "some moisturizing ointment" then var herb2 plovik
                if "%full.order.noun" = "some itch salve" then var herb2 jadice
@@ -2048,7 +2048,7 @@ lack.material:
                if "%order.type" = "aevaes" then var order.num 10
                if "%order.type" = "genich" then var order.num 11
                if "%order.type" = "ojhenik" then var order.num 12
-               if "%order.type" = "red.flowers" then var order.num 13
+               if "%order.type" = "flower" then var order.num 13
                if "%order.type" = "root" then var order.num 14
                if "%order.type" = "pollen" then var order.num 15     
                if !matchre("%order.type", "pollen|root") then evalmath reqd.order ceiling((%mass.volume-%%order.type.material.volume)/25)

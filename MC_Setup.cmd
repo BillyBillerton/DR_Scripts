@@ -2,7 +2,7 @@ if "$charactername" = "Vawgars" then goto CHARACTER1
 if "$charactername" = "Eireen" then goto CHARACTER2
 if "$charactername" = "Loukno" then goto CHARACTER3
 if "$charactername" = "Roodie" then goto CHARACTER4
-#if "$charactername" = "Aerog" then goto CHARACTER5
+if "$charactername" = "Afkalfot" then goto CHARACTER5
 echo You did not set your character name correctly. Please edit MC_SETUP
 exit
 
@@ -147,7 +147,7 @@ put #var MC_TOOLBELT_Engineering NULL
 put #var MC_TOOL.STORAGE_Engineering pack
 #OUTFITTING
 put #var MC_NEEDLES sewing needles
-put #var MC_SCISSORS scissors
+put #var MC_SCISSORS steel scissors
 put #var MC_SLICKSTONE slickstone
 put #var MC_YARDSTICK yardstick
 put #var MC_AWL NULL
@@ -228,7 +228,7 @@ put #var MC_Outfitting_NOWO 0
 #	MC_ALC.DIFFICULTY: Order difficulty easy, challenging, hard
 put #var MC_ALCHEMY.STORAGE haversack
 put #var MC_ALC.DISCIPLINE remed
-put #var MC_ALC.DIFFICULTY challenging
+put #var MC_ALC.DIFFICULTY easy
 put #var MC_Alchemy_NOWO 0
 #######################################################################
 ########################  ENCHANTING VARIABLES  #######################
@@ -523,10 +523,10 @@ put #var MC_Forging_NOWO 0
 #	MC_ENG.DIFFICULTY: Order difficulty easy, challenging, hard
 #	MC_ENG.DEED: DEED orders instead of bundling items on or off
 put #var MC_ENGINEERING.STORAGE haversack
-put #var MC_ENG.DISCIPLINE tinkering
-put #var MC_ENG.MATERIAL pine
-put #var MC_ENG.PREF lumber
-put #var MC_ENG.DIFFICULTY challenging
+put #var MC_ENG.DISCIPLINE carving
+put #var MC_ENG.MATERIAL wolf-bone
+put #var MC_ENG.PREF bone
+put #var MC_ENG.DIFFICULTY hard
 put #var MC_ENG.DEED off
 put #var MC_Engineering_NOWO 0
 #######################################################################
@@ -599,7 +599,7 @@ put #var MC.Mark off
 put #var MC_BLACKLIST none
 put #var MC_WORK.OUTSIDE 0
 #put #var MC_PREFERRED.ROOM 
-#put #var MC_FRIENDLIST
+#put #var MC_FRIENDLIST Dreamheart|Okskeris
 put #var MC_NOWO 0
 put #var MC_END.EARLY 0
 put #var MC_MAX.ORDER 3
@@ -624,7 +624,7 @@ put #var MC_TOOLBELT_Forging NULL
 put #var MC_TOOL.STORAGE_Forging satchel
 #ENGINEERING
 put #var MC_CHISEL sharpened chisel
-put #var MC_SAW serrated saw
+put #var MC_SAW bone saw
 put #var MC_RASP tapered rasp
 put #var MC_RIFFLER elongated riffler
 put #var MC_TINKERTOOL tools
@@ -673,7 +673,7 @@ CHARACTER5:
 put #var MC_FORGING.STORAGE haversack
 put #var MC_FORGING.DISCIPLINE weapon
 put #var MC_FORGING.MATERIAL steel
-put #var MC_FORGING.DIFFICULTY hard
+put #var MC_FORGING.DIFFICULTY challenging
 put #var MC_FORGING.DEED off
 put #var MC_SMALL.ORDERS 0
 put #var MC_Forging_NOWO 0
@@ -690,7 +690,7 @@ put #var MC_ENGINEERING.STORAGE haversack
 put #var MC_ENG.DISCIPLINE carving
 put #var MC_ENG.MATERIAL wolf-bone
 put #var MC_ENG.PREF bone
-put #var MC_ENG.DIFFICULTY hard
+put #var MC_ENG.DIFFICULTY easy
 put #var MC_ENG.DEED off
 put #var MC_Engineering_NOWO 0
 #######################################################################
@@ -702,11 +702,11 @@ put #var MC_Engineering_NOWO 0
 #	MC_OUT.PREF: Material type noun i.e. yarn, cloth, leather
 #	MC_OUT.DIFFICULTY: Order difficulty easy, challenging, hard
 #	MC_OUT.DEED: DEED orders instead of bundling items on or off
-put #var MC_OUTFITTING.STORAGE satchel
+put #var MC_OUTFITTING.STORAGE haversack
 put #var MC_OUT.DISCIPLINE tailor
 put #var MC_OUT.MATERIAL wool
-put #var MC_OUT.PREF cloth
-put #var MC_OUT.DIFFICULTY hard
+put #var MC_OUT.PREF yarn
+put #var MC_OUT.DIFFICULTY easy
 put #var MC_OUT.DEED off
 put #var MC_Outfitting_NOWO
 #######################################################################
@@ -756,7 +756,7 @@ put #var MC_Enchanting_NOWO 0
 #	MC_MAX.ORDER: Maximum number of items to craft, will get a new work order if above this number
 # 	MC_MIN.ORDER: Minimum number of items to craft, will get a new work order if below this number
 put #var MC_REPAIR on
-put #var MC_AUTO.REPAIR on
+put #var MC_AUTO.REPAIR off
 put #var MC_GET.COIN on
 put #var MC_REORDER on
 put #var MC.Mark off
@@ -777,19 +777,19 @@ put #var MC_MIN.ORDER 3
 # An array of your tools that go on tool belts.i.e. silversteel mallet|muracite tongs|stirring rod
 put #var MC_TIED.TOOLS NULL
 #FORGING
-put #var MC_HAMMER silversteel mallet
-put #var MC_SHOVEL wide shovel
-put #var MC_TONGS box-jaw tongs
+put #var MC_HAMMER straight-peen mallet
+put #var MC_SHOVEL tapered shovel
+put #var MC_TONGS curved tongs
 put #var MC_PLIERS hooked pliers
-put #var MC_BELLOWS corrugated-hide bellows
+put #var MC_BELLOWS bellows
 put #var MC_STIRROD stirring rod
 put #var MC_TOOLBELT_Forging NULL
 put #var MC_TOOL.STORAGE_Forging haversack
 #ENGINEERING
-put #var MC_CHISEL iron chisel
-put #var MC_SAW bone saw
-put #var MC_RASP iron rasp
-put #var MC_RIFFLER square riffler
+put #var MC_CHISEL long chisel
+put #var MC_SAW saw
+put #var MC_RASP coarse rasp
+put #var MC_RIFFLER squat riffler
 put #var MC_TINKERTOOL tools
 put #var MC_CARVINGKNIFE carving knife
 put #var MC_SHAPER wood shaper
@@ -798,19 +798,19 @@ put #var MC_CLAMP metal clamps
 put #var MC_TOOLBELT_Engineering NULL
 put #var MC_TOOL.STORAGE_Engineering haversack
 #OUTFITTING
-put #var MC_NEEDLES sewing needles
-put #var MC_SCISSORS ka'hurst scissors
+put #var MC_NEEDLES knitting needles
+put #var MC_SCISSORS scissors
 put #var MC_SLICKSTONE slickstone
 put #var MC_YARDSTICK silversteel yardstick
 put #var MC_AWL uthamar awl
 put #var MC_TOOLBELT_Outfitting NULL
 put #var MC_TOOL.STORAGE_Outfitting haversack
 #ALCHEMY
-put #var MC_BOWL alabaster bowl
-put #var MC_MORTAR stone mortar
+put #var MC_BOWL bowl
+put #var MC_MORTAR iron mortar
 put #var MC_STICK mixing stick
-put #var MC_PESTLE grooved pestle
-put #var MC_SIEVE wire sieve
+put #var MC_PESTLE iron pestle
+put #var MC_SIEVE sieve
 put #var MC_TOOLBELT_Alchemy NULL
 put #var MC_TOOL.STORAGE_Alchemy haversack
 #ENCHANTING

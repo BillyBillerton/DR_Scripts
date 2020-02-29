@@ -20,23 +20,23 @@
 
 
 
-     var smalledge sickle
-     var largeedge battle.axe
-     var twohandededge flamberge
+     var smalledge none
+     var largeedge none
+     var twohandededge none
      var edge-maneuver none
-     var smallblunt none
+     var smallblunt cuska
      var largeblunt none
      var twohandedblunt none
      var blunt-maneuver none
-     var staves nightstick
+     var staves none
      var staves-maneuver none
      var polearm none
      var polearm-maneuver none
-     var crossbow crossbow
-     var crossbow-ammo bolt
-     var crossbow-shoot snipe
+     var crossbow none
+     var crossbow-ammo none
+     var crossbow-shoot off
      var crossbow-snapshots off
-     var bow none
+     var bow bow
      var bow-ammo arrow
      var bow-shoot poach
      var bow-snapshots on
@@ -52,13 +52,13 @@
      var heavythrown-bond off
      var heavythrown-attack throw
      var thrown-maneuver none
-     var offhand off
+     var offhand cuska
      var offhand-type thrown
      var offhand-bond off
-     var brawl on
+     var brawl off
      var brawl-maneuver none
 
-     var train-stealths on
+     var train-stealths off
      var alwayshideFORmelee off
      var alwayshideFORranged off
  
@@ -104,7 +104,7 @@
 #% LOOT
      var lootgems on
      var lootcoins on
-     var lootboxes on
+     var lootboxes off
 
      var box-holders backpack|haversack
      var box-limit 9999

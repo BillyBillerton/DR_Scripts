@@ -1,10 +1,10 @@
 var time 0
 var aug_spellname refresh
-var augmana 1
+var augmana 6
 var ward_spellname ic
 var wardmana 1
 var util_spellname bs	
-var utilmana 1
+var utilmana 10
 
 put stow left
 put stow right

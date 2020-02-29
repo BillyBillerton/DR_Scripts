@@ -63,8 +63,8 @@
      var alwayshideFORranged off
  
      var targetmagic on
-     var TM-spell-1 horn 6
-     var TM-spell-2 ff 5
+     var TM-spell-1 horn 8
+     var TM-spell-2 ff 8
      var TM-spell-3 none
      var TM-weapon none
 
@@ -72,7 +72,7 @@
 #% Debil cast can be set to area, creature, a specific command like "malediction offense" or none for general debil casts.
 
      var debilitation on
-     var debil-spell sick
+     var debil-spell male 6
      var debil-cast none
 
      var arrange-times 5
@@ -112,22 +112,22 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 40 40 100
-     var largeedge-stance 100 40 40 100
-     var twohandededge-stance 100 40 40 100
-     var smallblunt-stance 100 40 40 100
-     var largeblunt-stance 100 40 40 100
-     var twohandedblunt-stance 100 40 40 100
-     var staves-stance 100 40 40 100
-     var polearm-stance 100 40 40 100
-     var crossbow-stance 100 40 40 100
+     var smalledge-stance 100 42 40 100
+     var largeedge-stance 100 42 40 100
+     var twohandededge-stance 100 42 40 100
+     var smallblunt-stance 100 42 40 100
+     var largeblunt-stance 100 42 40 100
+     var twohandedblunt-stance 100 42 40 100
+     var staves-stance 100 42 40 100
+     var polearm-stance 100 42 40 100
+     var crossbow-stance 100 42 40 100
      var bow-stance 100 0 80 100
      var slings-stance 100 0 80 100
-     var lightthrown-stance 100 40 40 100
-     var heavythrown-stance 100 40 40 100
-     var offhand-stance 100 40 40 100
-     var brawl-stance 100 40 40 100
-     var TM-stance 100 40 40 100
+     var lightthrown-stance 100 42 40 100
+     var heavythrown-stance 100 42 40 100
+     var offhand-stance 100 42 40 100
+     var brawl-stance 100 42 40 100
+     var TM-stance 100 42 40 100
 
 #% WARMAGE SUMMONING
      var wm-align air
@@ -235,11 +235,11 @@
 
 
 #% SPELL BUFFS
-     var buff-spell-1 center
+     var buff-spell-1 center 20
      var buff-camb-1 none
-     var buff-spell-2 mapp
+     var buff-spell-2 mapp 20
      var buff-camb-2 none
-     var buff-spell-3 none
+     var buff-spell-3 sol 20
      var buff-camb-3 none
      var buff-spell-4 none
      var buff-camb-4 none

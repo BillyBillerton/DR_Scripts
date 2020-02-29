@@ -1,24 +1,24 @@
 if $charactername = Loukno then 
 { 
 var gafMana 100 
+var researchList utility|augmentation|warding|FUNDAMENTAL|stream|FUNDAMENTAL
+} 
+ 
+if $charactername = Eireen then 
+{ 
+var gafMana 60
 var researchList utility|augmentation|warding|FUNDAMENTAL|stream|FUNDAMENTAL 
 } 
  
-if $charactername = Perias then 
+if $charactername = Vawgars then 
 { 
-var gafMana 45 
+var gafMana 15 
 var researchList utility|augmentation|warding|FUNDAMENTAL|stream|FUNDAMENTAL 
 } 
  
-if $charactername = Shingi then 
+if $charactername = Afkalfot then 
 { 
-var gafMana 35 
-var researchList utility|augmentation|warding|FUNDAMENTAL|stream|FUNDAMENTAL 
-} 
- 
-if $charactername = Ntel then 
-{ 
-var gafMana 17 
+var gafMana 15 
 var researchList utility|augmentation|warding|FUNDAMENTAL|stream|FUNDAMENTAL 
 } 
  
