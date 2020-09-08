@@ -673,7 +673,7 @@ CHARACTER5:
 put #var MC_FORGING.STORAGE haversack
 put #var MC_FORGING.DISCIPLINE weapon
 put #var MC_FORGING.MATERIAL steel
-put #var MC_FORGING.DIFFICULTY challenging
+put #var MC_FORGING.DIFFICULTY hard
 put #var MC_FORGING.DEED off
 put #var MC_SMALL.ORDERS 0
 put #var MC_Forging_NOWO 0
@@ -690,7 +690,7 @@ put #var MC_ENGINEERING.STORAGE haversack
 put #var MC_ENG.DISCIPLINE carving
 put #var MC_ENG.MATERIAL wolf-bone
 put #var MC_ENG.PREF bone
-put #var MC_ENG.DIFFICULTY easy
+put #var MC_ENG.DIFFICULTY hard
 put #var MC_ENG.DEED off
 put #var MC_Engineering_NOWO 0
 #######################################################################
@@ -706,7 +706,7 @@ put #var MC_OUTFITTING.STORAGE haversack
 put #var MC_OUT.DISCIPLINE tailor
 put #var MC_OUT.MATERIAL wool
 put #var MC_OUT.PREF yarn
-put #var MC_OUT.DIFFICULTY easy
+put #var MC_OUT.DIFFICULTY hard
 put #var MC_OUT.DEED off
 put #var MC_Outfitting_NOWO
 #######################################################################
@@ -717,7 +717,7 @@ put #var MC_Outfitting_NOWO
 #	MC_ALC.DIFFICULTY: Order difficulty easy, challenging, hard
 put #var MC_ALCHEMY.STORAGE haversack
 put #var MC_ALC.DISCIPLINE remed
-put #var MC_ALC.DIFFICULTY challenging
+put #var MC_ALC.DIFFICULTY hard
 put #var MC_Alchemy_NOWO 0
 #######################################################################
 ########################  ENCHANTING VARIABLES  #######################
