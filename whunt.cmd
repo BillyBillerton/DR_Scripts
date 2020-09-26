@@ -58,12 +58,12 @@
      var brawl on
      var brawl-maneuver none
 
-     var train-stealths on
+     var train-stealths off
      var alwayshideFORmelee off
      var alwayshideFORranged off
  
      var targetmagic on
-     var TM-spell-1 ala
+     var TM-spell-1 ala 18
      var TM-spell-2 none
      var TM-spell-3 none
      var TM-weapon none
@@ -72,8 +72,8 @@
 #% Debil cast can be set to area, creature, a specific command like "malediction offense" or none for general debil casts.
 
      var debilitation on
-     var debil-spell burden
-     var debil-cast none
+     var debil-spell tc
+     var debil-cast area
 
      var arrange-times 5
      var arrange-option none
@@ -112,26 +112,26 @@
 #% STANCES  EVA PARRY SHIELD ATTACK
 
      var change-stance on
-     var smalledge-stance 100 40 40 100
-     var largeedge-stance 100 40 40 100
-     var twohandededge-stance 100 40 40 100
-     var smallblunt-stance 100 40 40 100
-     var largeblunt-stance 100 40 40 100
-     var twohandedblunt-stance 100 40 40 100
-     var staves-stance 100 40 40 100
-     var polearm-stance 100 40 40 100
+     var smalledge-stance 41 100 40 100
+     var largeedge-stance 41 100 40 100
+     var twohandededge-stance 41 100 40 100
+     var smallblunt-stance 41 100 40 100
+     var largeblunt-stance 41 100 40 100
+     var twohandedblunt-stance 41 100 40 100
+     var staves-stance 41 100 40 100
+     var polearm-stance 41 100 40 100
      var crossbow-stance 100 0 81 100
      var bow-stance 100 0 80 100
      var slings-stance 100 4 80 100
-     var lightthrown-stance 100 40 40 100
-     var heavythrown-stance 100 40 40 100
-     var offhand-stance 100 40 40 100
-     var brawl-stance 100 40 40 100
-     var TM-stance 100 40 40 100
+     var lightthrown-stance 41 100 40 100
+     var heavythrown-stance 41 100 40 100
+     var offhand-stance 41 100 40 100
+     var brawl-stance 41 100 40 100
+     var TM-stance 41 100 40 100
 
 #% WARMAGE SUMMONING
      var wm-align air
-     var wm-pathway damage
+     var wm-pathway none
 
 
      
@@ -235,17 +235,17 @@
 
 
 #% SPELL BUFFS
-     var buff-spell-1 ease
+     var buff-spell-1 zephyr 16
      var buff-camb-1 none
-     var buff-spell-2 maf
+     var buff-spell-2 es 19
      var buff-camb-2 none
-     var buff-spell-3 zephyr
+     var buff-spell-3 tailwind 15
      var buff-camb-3 none
-     var buff-spell-4 none
+     var buff-spell-4 substratum 14
      var buff-camb-4 none
-     var buff-spell-5 none
+     var buff-spell-5 ys 15
      var buff-camb-5 none
-     var buff-spell-6 none
+     var buff-spell-6 suf 20
      var buff-camb-6 none
      var buff-spell-7 none
      var buff-camb-7 none
